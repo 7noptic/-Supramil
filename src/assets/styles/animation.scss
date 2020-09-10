@@ -1,0 +1,30 @@
+$translate: 100px;
+
+.transition{
+transition: all .8s;
+}
+.item__right-out{
+  transform: translateX($translate);
+  opacity: 0;
+}
+.item__left-out{
+  transform: translateX(-$translate);
+  opacity: 0;
+}
+
+.item__top-out{
+  transform: translateY(-$translate);
+  opacity: 0;
+}
+
+.item__bottom-out{
+  transform: translateY($translate);
+  opacity: 0;
+}
+
+.item__fade-out{
+  opacity: 0;
+}
+.item__fade-in{
+  opacity: 1;
+}
