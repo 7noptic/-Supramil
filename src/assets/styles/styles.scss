@@ -31,7 +31,11 @@ dl,
 dd {
   margin: 0;
 }
-
+html, body{
+  overflow: hidden;
+  min-width: 320px;
+  min-height: 480px;
+}
 html {
   overflow: hidden;
   scroll-behavior: smooth;
@@ -44,6 +48,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   min-width: 320px;
+
 }
 
 img {
@@ -149,12 +154,6 @@ main {
   justify-content: center;
 }
 
-
-.pet-selection {
-  width: 60%;
-  position: relative;
-}
-
 .pet-selection__title {
   width: 195px;
   color: #336447;
@@ -164,8 +163,8 @@ main {
 
 .pet-selection__bg {
   transform: scale(2);
-  margin-top: 10%;
-  margin-left: -55%;
+  margin-top: 11%;
+  margin-left: -49%;
 }
 
 .pet-selection__link {
@@ -203,9 +202,8 @@ main {
 }
 
 .pet-selection__link-two {
-  top: 53%;
-  left: 30%;
-
+  top: 55%;
+  left: 40%;
 }
 
 .pet-selection__link::after {
@@ -222,19 +220,18 @@ main {
   bottom: 8px;
 }
 
-.pill-selection {
-  width: 40%;
-}
 
 .pill-selection__title {
   text-shadow: #fcf0aa 2px 2px 5px, #fcf0aa -2px -2px 5px,
   #fcf0aa -2px 2px 5px, #fcf0aa 2px -2px 5px;
   line-height: 56.87px;
-  width: 560px;
+  max-width: 560px;
   text-align: center;
+  margin-top: -50px;
+  margin-bottom: 40px;
 }
 
-.select-weight {
+section.select-weight {
   display: none;
   //display: flex;
   align-items: center;
@@ -253,11 +250,31 @@ main {
   display: flex;
   justify-content: center;
 }
-
-.card__item {
-  width: 33.3%;
+.card__item{
+  display: block;
+  padding: 10px;
+  text-decoration: none;
 }
+.card__item-img{
+  transition: all .7s;
+}
+.card__item:hover{
+  .card__item-img{
+    transform: scale(1.1);
+  }
+  .card__item-title {
+    color: #336447;
+    text-shadow: #fcf0aa 2px 2px 5px, #fcf0aa -2px -2px 5px,
+    #fcf0aa -2px 2px 5px, #fcf0aa 2px -2px 5px;
+  }
+}
+.card__item:active{
+  .card__item-title{
+    color:#fcf0aa;
 
+  }
+
+}
 .card__item-title {
   font-family: Roboto;
   font-size: 1rem;
@@ -266,6 +283,15 @@ main {
   max-width: 290px;
   margin-top: 30px;
 }
+/*
+.card__item-title:hover{
+  color: #336447;
+  text-shadow: #fcf0aa 2px 2px 5px, #fcf0aa -2px -2px 5px,
+  #fcf0aa -2px 2px 5px, #fcf0aa 2px -2px 5px;
+}
+.card__item-title:active{
+}*/
+
 
 .select-tablet {
   display: none;
@@ -310,3 +336,4 @@ main {
 .arsenal__property {
   position: absolute;
 }
+@import "burger.scss";

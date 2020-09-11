@@ -1,4 +1,6 @@
 $translate: 100px;
+$slowAnimation: 1s;
+$fastAnimation: .6s;
 
 .transition{
 transition: all .8s;
@@ -25,6 +27,13 @@ transition: all .8s;
 .item__fade-out{
   opacity: 0;
 }
+
 .item__fade-in{
-  opacity: 1;
+  animation: fade-in $fastAnimation infinite linear;
+  -webkit-animation: fade-in $fastAnimation linear;
+}
+
+@keyframes fade-in{
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
 }

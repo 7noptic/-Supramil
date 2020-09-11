@@ -1,0 +1,139 @@
+@media (max-width: 991px) {
+  h2 {
+    font-size: 1rem;
+  }
+  .header {
+    background-size: contain;
+  }
+  .header__nav-item {
+    padding-left: 20px;
+    font-family: Roboto;
+    font-size: 0.45rem;
+    padding-top: 10px;
+  }
+  .header__logo-img {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  .pet-selection__title {
+    margin-top: 0;
+  }
+  .pill-selection__title {
+    margin-top: -30px;
+    margin-bottom: 0px;
+  }
+  .pet-selection__link {
+    width: 120px;
+    height: 120px;
+    border: 6px solid #fff;
+    font-size: 1.1rem;
+    line-height: 35px;
+    padding-top: 10px;
+    padding-left: 25px;
+    margin-left: 20%;
+    margin-top: -50px;
+  }
+  .pet-selection__link::after {
+    content: url('../img/pet-selection__link-arrow-media.png');
+  }
+  .pet-selection__bg {
+    transform: scale(1.8);
+    margin-top: 11%;
+    margin-left: -25%;
+  }
+  .pill-selection__item {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 767px) {
+  h2 {
+    font-size: .7rem;
+  }
+  h3 {
+    font-size: 1rem;
+    line-height: 23px;
+  }
+  .header__nav-item {
+    font-size: .4rem;
+  }
+  .header__nav {
+    margin-left: 10px;
+  }
+  .header__nav-item {
+    padding-left: 8px;
+
+  }
+  .header__logo-img {
+    width: 50%;
+  }
+  .pill-selection__title {
+    line-height: 30px;
+  }
+  .pet-selection__link {
+    width: 80px;
+    height: 80px;
+    font-size: .7rem;
+    line-height: 21px;
+    padding-top: 5px;
+    padding-left: 13px;
+    margin-top: -49px;
+  }
+  .pet-selection__link::after {
+    bottom: 3px;
+  }
+  .pet-selection__title {
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 575px) {
+  .row {
+    margin-right: 0;
+  }
+  .header {
+    background: url('../img/header__bg-media.png') no-repeat;
+
+    background-size: contain;
+    width: 100%;
+    height: 100vh;
+  }
+  .header__logo-img {
+    width: 90%;
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+  .header__logo:after {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    content: '';
+    display: block;
+    width: 2px;
+    height: 40px;
+    background-color: #336447;
+  }
+  .pill-selection__title {
+    margin-top: -10px;
+  }
+  .header__nav-item {
+    font-size: .35rem;
+    padding-left: 6px;
+  }
+  .pet-selection__link {
+
+    margin-top: -30px;
+  }
+
+  .header__content {
+    margin-top: 15px;
+  }
+  .pill-selection__item {
+    transform: scale(0.6);
+    margin-top: 120px;
+  }
+  .pill-selection__title{
+    min-width: 320px;
+  }
+
+}
