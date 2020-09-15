@@ -1,0 +1,14 @@
+.result{
+  display: none;
+  //display: flex;
+  align-items: center;
+}
+.result__subtitle{
+  margin-top: 21px;
+}
+
+.result__img{
+  position: absolute;
+  right: -150px;
+  transform: scale(1.5);
+}

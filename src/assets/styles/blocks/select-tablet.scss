@@ -1,0 +1,59 @@
+.select-tablet {
+  display: none;
+  //display: flex;
+  width: 100%;
+}
+
+.shield {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: url('../img/shield.png') no-repeat 0 -400px;
+  height: 100vh;
+  width: 100%;
+}
+
+.arsenal {
+  position: relative;
+}
+
+.img {
+  position: relative;
+  margin-bottom: 100px;
+  z-index: 1;
+}
+
+.arsenal__img-1 {
+  position: relative;
+  z-index: 1;
+
+}
+
+.arsenal__img-2 {
+  position: absolute;
+  bottom: 100px;
+  left: 15px;
+  z-index: 0;
+  transform: scale(1.5);
+}
+
+.arsenal__img-3 {
+  position: absolute;
+  bottom: 415px;
+  left: 125px;
+}
+
+
+.arsenal__plus-one{
+  top: -250px;
+  left: 50px;
+  animation: randomPosition 5s infinite linear;
+  -webkit-animation: randomPosition 5s infinite linear;
+
+}
+.arsenal__plus-two{
+  top: -195px;
+  right: 0;
+  animation: randomPosition 5s infinite linear;
+  -webkit-animation: randomPosition 5s infinite linear;
+}

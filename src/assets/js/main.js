@@ -1,17 +1,20 @@
 let slide1Right = document.querySelectorAll('.pill-selection'),
     slide1Left = document.querySelectorAll('.pet-selection > a, .pet-selection>h3,nav,.header__logo'),
-    slide1Fade = document.querySelector('.header');
+    slide1Fade = document.querySelector('.header'),
 
     slide2Fade = document.querySelector('.card'),
 
     sections = document.querySelectorAll('section'),
 
-    link = document.querySelector('.pet-selection__link'),
+    selectAnimal = document.querySelectorAll('.pet-selection__link'),
+
+
+        sectionSelectCat = document.querySelector('#select-weight-cat'),
 
     card = document.querySelector('.card'),
-        cardLink = card.querySelectorAll('a');
+    cardLink = card.querySelectorAll('a');
 
-link.addEventListener('click', function () {
+selectAnimal[0].addEventListener('click', function () {
     itemsRightOut(slide1Right);
     itemLeftOut(slide1Left);
     fadeOut(slide1Fade);
@@ -19,8 +22,16 @@ link.addEventListener('click', function () {
     setTimeout(displayFlex, 650, sections[1]);
     fadeIn(sections[1]);
 });
+selectAnimal[1].addEventListener('click', function () {
+    itemsRightOut(slide1Right);
+    itemLeftOut(slide1Left);
+    fadeOut(slide1Fade);
+    setTimeout(displayNone, 650, sections[0]);
+    setTimeout(displayFlex, 650, sectionSelectCat);
+    fadeIn(sectionSelectCat);
+});
 
-card.addEventListener('click', function() {
+card.addEventListener('click', function () {
     if (!event.target('a')) return
     alert('asdfsa');
 })
@@ -34,9 +45,9 @@ function displayFlex(item) {
 }
 
 function itemsRightOut(item) {
-        for (let key of item) {
-            key.classList.add('transition', 'item__right-out');
-        }
+    for (let key of item) {
+        key.classList.add('transition', 'item__right-out');
+    }
 }
 
 
@@ -61,6 +72,7 @@ function itemBottomOut(item) {
 function fadeOut(item) {
     item.classList.add('transition', 'item__fade-out');
 }
+
 function fadeIn(item) {
     item.classList.add('item__fade-in');
 }

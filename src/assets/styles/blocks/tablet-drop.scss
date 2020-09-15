@@ -1,0 +1,15 @@
+
+.tablet-drop{
+  display: none;
+  //display: flex;
+  width: 100%;
+}
+.tablet-drop__bg{
+  position: absolute;
+  bottom: 0;
+}
+.tablet-drop__tablet{
+  position: absolute;
+  top: 30%;
+  left: 40%;
+}

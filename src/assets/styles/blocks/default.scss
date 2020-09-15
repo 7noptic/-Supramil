@@ -1,0 +1,116 @@
+/* DEFAULT */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+html, body{
+  //overflow: hidden;
+  scroll-behavior: smooth;
+
+  min-width: 320px;
+  min-height: 480px;
+  font-size: 30px;
+
+}
+
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  min-width: 320px;
+
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+
+article > * + * {
+  margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* MAIN STYLES*/
+h2 {
+  font-family: "Open Sans";
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: Verveine;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 48px;
+}
+
+
+main {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+.block-gradient {
+  background: rgb(45, 85, 62);
+  background: linear-gradient(351deg, rgba(45, 85, 62, 1) 0%, rgba(62, 121, 86, 1) 57%, rgba(68, 193, 126, 1) 100%);
+  width: 100%;
+  height: 100vh;
+}
+
+
+.container {
+  width: 1140px;
+}
+.row{
+  height: 100%;
+}

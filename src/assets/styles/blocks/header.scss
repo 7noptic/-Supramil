@@ -1,0 +1,39 @@
+.header {
+  background: url('../img/header__bg.png') no-repeat;
+  height: 100vh;
+}
+
+.header__nav-list {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+
+.header__nav-item {
+  padding-left: 30px;
+  font-family: Roboto;
+  font-size: 0.6rem;
+  padding-top: 10px;
+
+}
+
+.header__nav-link {
+  text-decoration: none;
+  color: #066821;
+}
+
+.header__logo-img {
+  margin-top: 60px;
+  margin-left: 30px;
+}
+
+.header__content {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+}

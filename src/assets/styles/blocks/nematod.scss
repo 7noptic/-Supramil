@@ -1,0 +1,72 @@
+.nematod{
+  width: 100%;
+  height: 100%;
+  //display: flex;
+  display: none;
+  background: url("../img/nematodbg.jpg") no-repeat;
+  background-size: cover;
+}
+.nematod__text{
+  position: absolute;
+  bottom: 50%;
+  right: 30%;
+}
+
+
+.nematod__atack{
+  width: 45%;
+  height: 60%;
+  position: absolute;
+  right: 20%;
+  top: 20%;
+}
+.nematod__atack-pos{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.nematod__item{
+  background: url('../img/hexagon.png') no-repeat;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  //animation: shake-hard 2s infinite linear;
+}
+.nematod__item-1{
+  top: 53%;
+  left: 8%;
+}
+.nematod__item-2{
+  top: 5%;
+  left: 55%;
+}
+.nematod__item-3{
+  bottom: 35%;
+  left: 40%;
+}
+.nematod__item-4{
+  bottom: 23%;
+  right: 35%;
+}
+.nematod__item-5{
+  top: 0;
+  right: 64%;
+}
+.nematod__item-6{
+  top: 45%;
+  right: 22%;
+}
+.nematod__item-7{
+  top: 0;
+  right: 0;
+}
+.property-pos{
+  transform: rotate(45deg);
+  position: absolute;
+  top: 10%;
+  right: 15%;
+  transition: .1s;
+}
+.property-pos:active{
+  transform: rotate(-0deg);
+}

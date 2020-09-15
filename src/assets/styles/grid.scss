@@ -42,9 +42,4 @@ $grid-gutter-width: 30px !default;
 
 
 // Bootstrap file imports
-@import "text/mixins/deprecate";
-@import "screenreaders/mixins/screen-reader";
-@import "screenreaders/utilities/screenreaders";
-@import "breakpoints/mixins/breakpoints";
 @import "grid/bootstrap-grid";
-@import "sizing/utilities/sizing";
