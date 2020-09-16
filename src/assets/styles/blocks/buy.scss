@@ -1,4 +1,50 @@
 .buy{
+  display: none;
   background-color: #8f794a;
-  padding: 75px 15px;
+  padding: 0 15px 75px;
+}
+.buy__title{
+  margin: 75px 0 30px;
+}
+.buy__img{
+  transition: .3s;
+}
+.buy__img:hover{
+  transform: scale(1.05);
+}
+.buy__img:active{
+  transform: scale(.95);
+}
+.list__link{
+  position: relative;
+  color: #ffe699;
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 48px;
+  text-decoration: none;
+  transition: .4s;
+}
+.list__link:after {
+  display: block;
+  position: absolute;
+  bottom: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+  width: 100%;/*задаём длинну линии до наведения курсора*/
+  height: 2px; /*задаём ширину линии*/
+  background-color: #ffe699; /*задаём цвет линии*/
+  content: "";
+  transition:  0.3s; /*задаём время анимации*/
+}
+
+.list__link:hover:after,
+.list__link:focus:after {
+  margin-left: 51%;
+
+  width: 0%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
+.list__link:active{
+  font-size: 22px;
+}
+ul.list{
+  padding: 15px;
 }

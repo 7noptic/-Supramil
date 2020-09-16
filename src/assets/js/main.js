@@ -1,78 +1,89 @@
-let slide1Right = document.querySelectorAll('.pill-selection'),
-    slide1Left = document.querySelectorAll('.pet-selection > a, .pet-selection>h3,nav,.header__logo'),
-    slide1Fade = document.querySelector('.header'),
+document.addEventListener("DOMContentLoaded", function (event) {
 
-    slide2Fade = document.querySelector('.card'),
+    let slide1Right = document.querySelectorAll('.pill-selection'),
+        slide1Left = document.querySelectorAll('.pet-selection > a, .pet-selection>h3,nav,.header__logo'),
+        slide1Fade = document.querySelector('.header'),
 
-    sections = document.querySelectorAll('section'),
+        slide2Fade = document.querySelector('.card'),
 
-    selectAnimal = document.querySelectorAll('.pet-selection__link'),
+        sections = document.querySelectorAll('section'),
+
+        selectAnimal = document.querySelectorAll('.pet-selection__link'),
 
 
         sectionSelectCat = document.querySelector('#select-weight-cat'),
 
-    card = document.querySelector('.card'),
-    cardLink = card.querySelectorAll('a');
+        card = document.querySelector('.card'),
+        cardLink = card.querySelector('.row');
 
-selectAnimal[0].addEventListener('click', function () {
-    itemsRightOut(slide1Right);
-    itemLeftOut(slide1Left);
-    fadeOut(slide1Fade);
-    setTimeout(displayNone, 650, sections[0]);
-    setTimeout(displayFlex, 650, sections[1]);
-    fadeIn(sections[1]);
-});
-selectAnimal[1].addEventListener('click', function () {
-    itemsRightOut(slide1Right);
-    itemLeftOut(slide1Left);
-    fadeOut(slide1Fade);
-    setTimeout(displayNone, 650, sections[0]);
-    setTimeout(displayFlex, 650, sectionSelectCat);
-    fadeIn(sectionSelectCat);
-});
+    const arrImgPackDog = ['img/dog-pack-1.png', 'img/dog-pack-2.png', 'img/dog-pack-3.png'],
+        arrImgPackCat = ['img/cat-pack-1.png', 'img/cat-pack-2.png'];
 
-card.addEventListener('click', function () {
-    if (!event.target('a')) return
-    alert('asdfsa');
-})
 
-function displayNone(item) {
-    item.style.display = 'none';
-}
+    /* ПЕРВЫЙ СЛАЙД */
+    selectAnimal[0].addEventListener('click', function () {
+        itemsRightOut(slide1Right);
+        itemLeftOut(slide1Left);
+        fadeOut(slide1Fade);
+        setTimeout(displayNone, 650, sections[0]);
+        setTimeout(displayFlex, 650, sections[1]);
+        fadeIn(sections[1]);
+    });
+    selectAnimal[1].addEventListener('click', () => {
+        itemsRightOut(slide1Right);
+        itemLeftOut(slide1Left);
+        fadeOut(slide1Fade);
+        setTimeout(displayNone, 650, sections[0]);
+        setTimeout(displayFlex, 650, sectionSelectCat);
+        fadeIn(sectionSelectCat);
+    });
 
-function displayFlex(item) {
-    item.style.display = 'flex';
-}
+    /* ВТОРОЙ СЛАЙД */
+    card.addEventListener('click', (event) => {
+        if (event.target.matches('a')) {
+            console.log('check');
+        }
+    });
 
-function itemsRightOut(item) {
-    for (let key of item) {
-        key.classList.add('transition', 'item__right-out');
+
+    /* АНИМАЦИИ */
+    function displayNone(item) {
+        item.style.display = 'none';
     }
-}
 
-
-function itemLeftOut(item) {
-    for (let key of item) {
-        key.classList.add('transition', 'item__left-out');
+    function displayFlex(item) {
+        item.style.display = 'flex';
     }
-}
 
-function itemBottomIn(item) {
-    item.classList.add('transition', 'item__bottom-in');
-}
+    function itemsRightOut(item) {
+        for (let key of item) {
+            key.classList.add('transition', 'item__right-out');
+        }
+    }
 
-function itemTopOut(item) {
-    item.classList.add('transition', 'item__top-out');
-}
+    function itemLeftOut(item) {
+        for (let key of item) {
+            key.classList.add('transition', 'item__left-out');
+        }
+    }
 
-function itemBottomOut(item) {
-    item.classList.add('transition', 'item__bottom-out');
-}
+    function itemBottomIn(item) {
+        item.classList.add('transition', 'item__bottom-in');
+    }
 
-function fadeOut(item) {
-    item.classList.add('transition', 'item__fade-out');
-}
+    function itemTopOut(item) {
+        item.classList.add('transition', 'item__top-out');
+    }
 
-function fadeIn(item) {
-    item.classList.add('item__fade-in');
-}
+    function itemBottomOut(item) {
+        item.classList.add('transition', 'item__bottom-out');
+    }
+
+    function fadeOut(item) {
+        item.classList.add('transition', 'item__fade-out');
+    }
+
+    function fadeIn(item) {
+        item.classList.add('item__fade-in');
+    }
+});

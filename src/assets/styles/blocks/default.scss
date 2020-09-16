@@ -30,7 +30,7 @@ dd {
   margin: 0;
 }
 html, body{
-  //overflow: hidden;
+  overflow: hidden;
   scroll-behavior: smooth;
 
   min-width: 320px;
@@ -98,7 +98,7 @@ main {
   display: -o-flex;
   display: flex;
   justify-content: center;
-  display: none;
+
 }
 .block-gradient {
   background: rgb(45, 85, 62);
