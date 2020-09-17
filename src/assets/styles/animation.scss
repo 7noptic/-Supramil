@@ -60,29 +60,6 @@ transition: all .8s;
 }
 
 
-@keyframes randomPosition{
-  0% {
-    transform: scale(.95);
-  }
-  25%{
-    transform: rotate(5deg);
-    transform: translateX(-3px);
-    transform: translateY(-3px);
-  }
-  50%{
-    transform: scale(1.05);
-    transform: translateX(1px);
-  }
-  75%{
-    transform: translateX(3px);
-    transform: translateY(3px);
-  }
-  100%{
-    transform: scale(.95);
-
-  }
-}
-
 @keyframes shake-hard {
   2% {
     transform: translate(5px, -3px) rotate(-0.5deg); }

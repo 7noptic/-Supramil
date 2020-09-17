@@ -16,23 +16,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
         selectAnimal = document.querySelectorAll('.pet-selection__link'), //КНОПКИ НА ПЕРВОМ СЛАЙДЕ
 
 
-        selectWeightDog = document.querySelectorAll('.card'),
+        selectWeightAnimal = document.querySelectorAll('.card'),
 
 
         selectTablet = document.querySelector('.arsenal__img-2'),
-        selectTabletLink = document.querySelectorAll('.arsenal__plus');
+        selectTabletLink = document.querySelectorAll('.arsenal__plus'),
 
-        footer = document.querySelector('footer');
+    footer = document.querySelector('footer');
 
 
     const arrImgPackDog = ['img/dog-pack-1-min.png', 'img/dog-pack-2-min.png', 'img/dog-pack-3-min.png'],
         arrImgPackCat = ['img/cat-pack-1-min.png', 'img/cat-pack-2-min.png'];
 
-    console.log(sections);
+
+
+
     /* ПЕРВЫЙ СЛАЙД */
     selectAnimal[0].addEventListener('click', () => selectAnimals(sections[1]));
     selectAnimal[1].addEventListener('click', () => selectAnimals(sectionSelectCat));
-    function selectAnimals(item){
+
+    function selectAnimals(item) {
         itemsRightOut(slide1Right);
         itemLeftOut(slide1Left);
         fadeOut(slide1Fade);
@@ -42,12 +45,25 @@ document.addEventListener("DOMContentLoaded", function (event) {
     };
 
     /* ВТОРОЙ СЛАЙД */
-    selectWeightDog[0].addEventListener('click', () => {
+    selectWeightAnimal[0].addEventListener('click', () => {
+        setTimeout(addAnimationPlusShakeWarning, 1190, selectTabletLink[0]);
+        addAnimationPlusShakeWarning(selectTabletLink[1]);
+
         fadeOut(sections[1]);
         setTimeout(displayNone, 590, sections[1]);
         setTimeout(displayFlex, 590, sections[2]);
         itemBottomIn(selectTablet);
         fadeIn(sections[2]);
+    });
+    selectWeightAnimal[1].addEventListener('click', () => {
+        setTimeout(addAnimationPlusShakeWarning, 1190, selectTabletLink[0]);
+        addAnimationPlusShakeWarning(selectTabletLink[1]);
+
+        fadeOut(sections[12]);
+        setTimeout(displayNone, 590, sections[12]);
+        setTimeout(displayFlex, 590, sections[2]);
+        fadeIn(sections[2]);
+
     });
     /* ТРЕТИЙ СЛАЙД */
     selectTabletLink[0].addEventListener('click', selectCestodOrNematod.bind(sections[4], sections[5]));
@@ -61,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         setTimeout(displayFlex, 590, sections[3]);
         fadeIn(sections[3]);
         /* ЧЕТВЁРТЫЙ СЛАЙД */
-        setTimeout(fadeOut, 1590, sections[3]);
+        /*setTimeout(fadeOut, 1590, sections[3]);
         setTimeout(displayNone, 2590, sections[3]);
         setTimeout(displayFlex, 2590, itemStart);
         setTimeout(fadeIn, 2590, itemStart);
@@ -89,20 +105,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
     };
 
     /* СЕДЬМОЙ СЛАЙД ОТКРЫТЬ*/
-    specialPlus[0].addEventListener('click', () =>specialPlusOpen(sections[7]));
-    specialPlus[1].addEventListener('click', () =>specialPlusOpen(sections[8]));
-    specialPlus[2].addEventListener('click', () =>specialPlusOpen(sections[9]));
-    specialPlus[3].addEventListener('click', () =>specialPlusOpen(sections[10]));
-    specialPlus[4].addEventListener('click', () =>specialPlusOpen(sections[11]));
+    specialPlus[0].addEventListener('click', () => specialPlusOpen(sections[7]));
+    specialPlus[1].addEventListener('click', () => specialPlusOpen(sections[8]));
+    specialPlus[2].addEventListener('click', () => specialPlusOpen(sections[9]));
+    specialPlus[3].addEventListener('click', () => specialPlusOpen(sections[10]));
+    specialPlus[4].addEventListener('click', () => specialPlusOpen(sections[11]));
 
     /* СЕДЬМОЙ СЛАЙД ЗАКРЫТЬ*/
     let triggerPlusClose = 0;
 
-    plusClose[2].addEventListener('click', () =>specialPlusClose(sections[7]));
-    plusClose[3].addEventListener('click', () =>specialPlusClose(sections[8]));
-    plusClose[4].addEventListener('click', () =>specialPlusClose(sections[9]));
-    plusClose[5].addEventListener('click', () =>specialPlusClose(sections[10]));
-    plusClose[6].addEventListener('click', () =>specialPlusClose(sections[11]));
+    plusClose[2].addEventListener('click', () => specialPlusClose(sections[7]));
+    plusClose[3].addEventListener('click', () => specialPlusClose(sections[8]));
+    plusClose[4].addEventListener('click', () => specialPlusClose(sections[9]));
+    plusClose[5].addEventListener('click', () => specialPlusClose(sections[10]));
+    plusClose[6].addEventListener('click', () => specialPlusClose(sections[11]));
 
 
     function specialPlusOpen(item) {
@@ -111,8 +127,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
         setTimeout(displayFlex, 590, item);
         fadeIn(item);
     }
-    function specialPlusClose(item){
-        if(triggerPlusClose <= 3) {
+
+    function specialPlusClose(item) {
+        if (triggerPlusClose <= 3) {
             fadeOut(item);
             setTimeout(displayNone, 590, item);
             setTimeout(displayFlex, 590, sections[6]);
@@ -136,6 +153,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
     /* АНИМАЦИИ */
+    function addAnimationPlusShakeWarning(item) {
+        item.classList.add('plus-animation-shake-warning');
+    }
     function displayNone(item) {
         item.style.display = 'none';
     }
@@ -143,6 +163,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     function displayFlex(item) {
         item.style.display = 'flex';
     }
+
     function itemsRightOut(item) {
         for (let key of item) {
             key.classList.add('transition', 'item__right-out');
