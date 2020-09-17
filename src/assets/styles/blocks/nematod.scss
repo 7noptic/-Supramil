@@ -3,7 +3,7 @@
   height: 100%;
   //display: flex;
   display: none;
-  background: url("../img/nematodbg.jpg") no-repeat;
+  background: url("../img/nematodbg-min.jpg") no-repeat center center;
   background-size: cover;
 }
 .nematod__text{
@@ -26,7 +26,7 @@
   position: relative;
 }
 .nematod__item{
-  background: url('../img/hexagon.png') no-repeat;
+  background: url('../img/hexagon-min.png') no-repeat;
   width: 45px;
   height: 45px;
   position: absolute;

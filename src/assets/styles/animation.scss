@@ -24,19 +24,41 @@ transition: all .8s;
   opacity: 0;
 }
 
-.item__fade-out{
-  opacity: 0;
+
+
+.item__bottom-in{
+  animation: top-in $fastAnimation linear;
+  -webkit-animation: top-in $fastAnimation linear;
 }
 
 .item__fade-in{
   animation: fade-in $fastAnimation linear;
   -webkit-animation: fade-in $fastAnimation linear;
 }
-
+.item__fade-out{
+  animation: fade-out $fastAnimation linear;
+  -webkit-animation: fade-out $fastAnimation linear;
+}
 @keyframes fade-in{
   0%   { opacity: 0; }
   100% { opacity: 1; }
 }
+@keyframes fade-out{
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes bottom-in {
+  0%{
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(100px);
+    opacity: 1;
+  }
+}
+
 
 @keyframes randomPosition{
   0% {

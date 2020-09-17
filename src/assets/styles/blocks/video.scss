@@ -1,14 +1,15 @@
 .video{
   display: none;
+  justify-content: center;
   background: rgb(45, 85, 62);
   background: linear-gradient(351deg, rgba(45, 85, 62, 1) 0%, rgba(62, 121, 86, 1) 57%, rgba(68, 193, 126, 1) 100%);
 }
 .video-parallax{
-  background-image: url("../img/videobg-parallax.png");
+  background-image: url("../img/videobg-parallax-min.png");
 
 
 
-  /* Create the parallax scrolling effect */
+  background-attachment: scroll;
   background-attachment: fixed;
   background-position: bottom;
   background-repeat: repeat-y;

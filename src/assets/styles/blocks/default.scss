@@ -29,8 +29,11 @@ dl,
 dd {
   margin: 0;
 }
-html, body{
+body{
   overflow: hidden;
+}
+html, body{
+
   scroll-behavior: smooth;
 
   min-width: 320px;
@@ -111,6 +114,6 @@ main {
 .container {
   width: 1140px;
 }
-.row{
+/*.row{
   height: 100%;
-}
+}*/

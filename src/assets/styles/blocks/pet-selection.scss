@@ -54,14 +54,14 @@
 }
 
 .pet-selection__link::after {
-  content: url('../img/pet-selection__link-arrow.png');
+  content: url('../img/pet-selection__link-arrow-min.png');
   display: block;
   position: absolute;
   bottom: 8px;
 }
 
 .pet-selection__link:hover::after {
-  content: url('../img/pet-selection__link-arrow-hover.png');
+  content: url('../img/pet-selection__link-arrow-hover-min.png');
   display: block;
   position: absolute;
   bottom: 8px;

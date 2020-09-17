@@ -3,7 +3,7 @@
   height: 100%;
   //display: flex;
   display: none;
-  background: url("../img/cestodbg.jpg") no-repeat;
+  background: url("../img/cestodbg-min.jpg") no-repeat center center;
   background-size: cover;
 }
 .cestod__text{
@@ -85,7 +85,7 @@
   position: relative;
 }
 .cestod__item{
-  background: url('../img/star.png') no-repeat;
+  background: url('../img/star-min.png') no-repeat;
   width: 45px;
   height: 45px;
   position: absolute;
