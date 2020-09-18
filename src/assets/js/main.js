@@ -92,9 +92,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
     /* ТРЕТИЙ СЛАЙД */
-    selectTabletLink[0].addEventListener('click', selectCestodOrNematod.bind(sections[4], sections[5]));
+    selectTabletLink[0].addEventListener('click', ()=>{selectCestodOrNematod(sections[4], sections[5]);setTimeout(animationCestod,2200);});
 
-    selectTabletLink[1].addEventListener('click', selectCestodOrNematod.bind(sections[5], sections[4]));
+    selectTabletLink[1].addEventListener('click', ()=>{selectCestodOrNematod(sections[5], sections[4]);setTimeout(animationNematod,2200);});
 
     function selectCestodOrNematod(itemStart, itemEnd) {
         let trigger = 0;
@@ -103,17 +103,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
         setTimeout(displayFlex, 590, sections[3]);
         fadeIn(sections[3]);
         /* ЧЕТВЁРТЫЙ СЛАЙД */
-        setTimeout(animationDropTablet, 590);
+        if (triggerCat>0){
+            setTimeout(animationDropTabletCat, 590);
+        }else{
+            setTimeout(animationDropTabletDog, 590);
+        }
         setTimeout(fadeOut, 1700, sections[3]);
         setTimeout(displayNone, 2200, sections[3]);
         setTimeout(displayFlex, 2200, itemStart);
         setTimeout(fadeIn, 1700, itemStart);
+
+
         /* ПЯТЫЙ СЛАЙД */
-        plusClose[0].addEventListener('click', () => CestodOrNematod(sections[4], sections[5]));
-        plusClose[1].addEventListener('click', () => CestodOrNematod(sections[5], sections[4]));
+        plusClose[0].addEventListener('click', () => CestodOrNematod(sections[4], sections[5], animationNematod()));
+        plusClose[1].addEventListener('click', () => CestodOrNematod(sections[5], sections[4], animationCestod()));
 
 
-        function CestodOrNematod(itemStart, itemEnd) {
+        function CestodOrNematod(itemStart, itemEnd, animation) {
             if (trigger >= 1) {
                 /* ШЕСТОЙ СЛАЙД */
                 fadeOut(sections[4]);
@@ -125,6 +131,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             } else {
                 fadeOut(itemStart);
                 setTimeout(displayNone, 590, itemStart);
+                setTimeout(animation, 590)
                 setTimeout(displayFlex, 590, itemEnd);
                 fadeIn(itemEnd);
                 trigger++;
@@ -148,6 +155,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     plusClose[4].addEventListener('click', () => specialPlusClose(sections[9]));
     plusClose[5].addEventListener('click', () => specialPlusClose(sections[10]));
     plusClose[6].addEventListener('click', () => specialPlusClose(sections[11]));
+console.log(sections);
 
 
     function specialPlusOpen(item) {
@@ -181,6 +189,52 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
     /* АНИМАЦИИ */
+    function animationNematod() {
+        const element = document.querySelector('.nematod__atack');
+        let height = 100,
+            top = 20;
+        const id = setInterval(frame, 20);
+
+        function frame() {
+            if (height < 32) {
+                clearInterval(id)
+                let nematodItem = document.querySelectorAll('.nematod__item'),
+                    i = 1;
+                for(let item of nematodItem){
+                    item.classList.add(`item__shake-hard-${i}`);
+                    i++;
+                }
+            } else {
+                height= height - 0.6;
+                top = top + 0.33;
+                element.style.height = height + '%';
+                element.style.top = top + '%';
+            }
+        }
+    }
+    function animationCestod() {
+        const element = document.querySelector('.cestod__atack');
+        let width = 100,
+            left = 0;
+        const id = setInterval(frame, 20);
+
+        function frame() {
+            if (width < 20) {
+                clearInterval(id)
+                let cestodItem = document.querySelectorAll('.cestod__item'),
+                    i = 1;
+                for(let item of cestodItem){
+                    item.classList.add(`item__shake-hard-${i}`);
+                    i++;
+                }
+            } else {
+                width = width - 0.6;
+                left = left + 0.25;
+                element.style.width = width + '%';
+                element.style.left = left + '%';
+            }
+        }
+    }
     function animationUpPack() {
         const pack = document.getElementById('replace-pack-1'),
             tabletPack = document.getElementById('replace-tablet-pack-1'),
@@ -203,7 +257,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         }
     }
-    function animationDropTablet() {
+    function animationDropTabletDog() {
         const element = document.querySelector('.tablet-drop__tablet');
         let position = 5;
         const id = setInterval(frame, 5);
@@ -217,9 +271,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         }
     }
+    function animationDropTabletCat() {
+        const element = document.querySelector('.tablet-drop__tablet');
+        let position = 5;
+        const id = setInterval(frame, 5);
+
+        function frame() {
+            if (position > 35) {
+                clearInterval(id)
+            } else {
+                position = position + 0.2;
+                element.style.top = position + '%';
+            }
+        }
+    }
 
     function addAnimationPlusShakeWarning(item) {
         item.classList.add('plus-animation-shake-warning');
+    }
+    function AnimationShakeHard(item) {
+        item.classList.add('item__shake-hard');
     }
 
     function displayNone(item) {
@@ -242,27 +313,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
     }
 
-    function itemBottomIn(item) {
-        item.classList.add('transition', 'item__bottom-in');
-    }
-
-    function itemTopOut(item) {
-        item.classList.add('transition', 'item__top-out');
-    }
-
-    function itemBottomOut(item) {
-        item.classList.add('transition', 'item__bottom-out');
-    }
-
-    function itemBottomIn(item) {
-        item.classList.add('item__bottom-in');
-    }
-
     function fadeOut(item) {
-        item.classList.add('item__fade-out');
+        item.classList.remove('item__fade-in');
+        item.classList.toggle('item__fade-out');
     }
 
     function fadeIn(item) {
-        item.classList.add('item__fade-in');
+        item.classList.remove('item__fade-out');
+        item.classList.toggle('item__fade-in');
     }
 });
