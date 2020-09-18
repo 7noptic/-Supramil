@@ -25,37 +25,107 @@
 
 .arsenal__img-1 {
   position: relative;
+  right: 25px;
   z-index: 1;
 
 }
 
 .arsenal__img-2 {
   position: absolute;
-  bottom: 100px;
+  bottom: 30px;
   left: 15px;
   z-index: 0;
-  transform: scale(1.5);
 }
 
 .arsenal__img-3 {
   position: absolute;
-  bottom: 415px;
-  left: 125px;
+  bottom: 445px;
+  left: 40%;
 }
 
 
 .arsenal__plus-one{
   top: -250px;
-  left: 50px;
-
+  left: 100px;
+}
+.arsenal__plus-one::before{
+  content:'R-празиквантел';
+  width: 370px;
+  color: #000000;
+  font-family: Verveine;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 48px;
+  position: absolute;
+  left: -360px;
+  text-shadow:
+          -0   -2px 0   #B29C62,
+          0   -2px 0   #B29C62,
+          -0    2px 0   #B29C62,
+          0    2px 0   #B29C62,
+          -2px -0   0   #B29C62,
+          2px -0   0   #B29C62,
+          -2px  0   0   #B29C62,
+          2px  0   0   #B29C62,
+          -1px -2px 0   #B29C62,
+          1px -2px 0   #B29C62,
+          -1px  2px 0   #B29C62,
+          1px  2px 0   #B29C62,
+          -2px -1px 0   #B29C62,
+          2px -1px 0   #B29C62,
+          -2px  1px 0   #B29C62,
+          2px  1px 0   #B29C62,
+          -2px -2px 0   #B29C62,
+          2px -2px 0   #B29C62,
+          -2px  2px 0   #B29C62,
+          2px  2px 0   #B29C62,
+          -2px -2px 0   #B29C62,
+          2px -2px 0   #B29C62,
+          -2px  2px 0   #B29C62,
+          2px  2px 0   #B29C62;
 
 }
+
 .arsenal__plus-two{
   top: -195px;
-  right: 0;
+  right: 100px;
 
 }
-
+.arsenal__plus-two:after{
+  content:'Мильбемицина оксим';
+  color: #000000;
+  font-family: Verveine;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 48px;
+  position: absolute;
+  left: 85px;
+  text-shadow:
+          -0   -2px 0   #B29C62,
+          0   -2px 0   #B29C62,
+          -0    2px 0   #B29C62,
+          0    2px 0   #B29C62,
+          -2px -0   0   #B29C62,
+          2px -0   0   #B29C62,
+          -2px  0   0   #B29C62,
+          2px  0   0   #B29C62,
+          -1px -2px 0   #B29C62,
+          1px -2px 0   #B29C62,
+          -1px  2px 0   #B29C62,
+          1px  2px 0   #B29C62,
+          -2px -1px 0   #B29C62,
+          2px -1px 0   #B29C62,
+          -2px  1px 0   #B29C62,
+          2px  1px 0   #B29C62,
+          -2px -2px 0   #B29C62,
+          2px -2px 0   #B29C62,
+          -2px  2px 0   #B29C62,
+          2px  2px 0   #B29C62,
+          -2px -2px 0   #B29C62,
+          2px -2px 0   #B29C62,
+          -2px  2px 0   #B29C62,
+          2px  2px 0   #B29C62;
+}
 .plus-animation-shake-warning{
   animation-name: shake-hard, plusWarning;
   animation-duration: 60s, 1s;

@@ -43,7 +43,8 @@
 .header__nav-link:hover:after{
   width: 100%;
 }
-.header__nav-link:active:after{
+.header__nav-link:active:after,
+.header__nav-link:focus:after{
   width: 0%;
 }
 

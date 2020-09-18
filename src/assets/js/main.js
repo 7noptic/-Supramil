@@ -3,32 +3,38 @@
 document.addEventListener("DOMContentLoaded", function (event) {
 
     let main = document.querySelector('main'),
-        html = document.querySelector('html'),
         body = document.querySelector('body'),
         sections = document.querySelectorAll('section'),
         sectionSelectCat = document.querySelector('#select-weight-cat'),
         plusClose = document.querySelectorAll('.plus-close-pos'),
         specialPlus = document.querySelectorAll('.special__plus'),
+        triggerCat = 0,
 
         slide1Right = document.querySelectorAll('.pill-selection'),
         slide1Left = document.querySelectorAll('.pet-selection > a, .pet-selection>h3,nav,.header__logo'),
         slide1Fade = document.querySelector('.header'),
-        selectAnimal = document.querySelectorAll('.pet-selection__link'), //КНОПКИ НА ПЕРВОМ СЛАЙДЕ
+        selectAnimal = document.querySelectorAll('.pet-selection__link'),
 
 
-        selectWeightAnimal = document.querySelectorAll('.card'),
+        btnSelectWeightAnimal = document.querySelectorAll('.card__item'),
 
 
         selectTablet = document.querySelector('.arsenal__img-2'),
         selectTabletLink = document.querySelectorAll('.arsenal__plus'),
 
-    footer = document.querySelector('footer');
+        footer = document.querySelector('footer');
 
 
-    const arrImgPackDog = ['img/dog-pack-1-min.png', 'img/dog-pack-2-min.png', 'img/dog-pack-3-min.png'],
-        arrImgPackCat = ['img/cat-pack-1-min.png', 'img/cat-pack-2-min.png'];
+    const arrImgPack = ['img/special-dog-pack-1-min.png', 'img/special-dog-pack-2-min.png', 'img/special-dog-pack-3-min.png', 'img/special-cat-pack-1-min.png', 'img/special-cat-pack-2-min.png'],
+        arrImgTabletPack = ['img/dog-tablet-1-min.png', 'img/dog-tablet-2-min.png', 'img/dog-tablet-3-min.png', 'img/cat-tablet-1-min.png', 'img/cat-tablet-2-min.png'],
+        arrImgTablet = ['img/tablet-dog-1-min.png', 'img/tablet-min.png', 'img/tablet-dog-2-min.png', 'img/tablet-cat-1-min.png', 'img/tablet-cat-2-min.png'],
+        arrImgAnimalDog = ['img/tabletdropbg-min.png', 'img/resultbg-min.png', 'img/securitybg-min.png', 'img/tastebg-min.png'],
+        arrImgAnimalCat = ['img/tabletdropbg-cat-min.png', 'img/resultbg-cat-min.png', 'img/securitybg-cat-min.png', 'img/tastebg-cat-min.png'],
 
-
+        arrReplacePack = ['replace-pack-1'], //2 css
+        arrReplaceTabletPack = ['replace-tablet-pack-1'],
+        arrReplaceTablet = ['replace-tablet-1', 'replace-tablet-2'],
+        arrReplaceAnimal = ['replace-animal-1', 'replace-animal-2', 'replace-animal-3', 'replace-animal-4'];
 
 
     /* ПЕРВЫЙ СЛАЙД */
@@ -45,26 +51,46 @@ document.addEventListener("DOMContentLoaded", function (event) {
     };
 
     /* ВТОРОЙ СЛАЙД */
-    selectWeightAnimal[0].addEventListener('click', () => {
+    btnSelectWeightAnimal[0].addEventListener('click', () => selectWeightAnimals(sections[1], arrImgPack[0], arrImgTabletPack[0], arrImgTablet[0], arrImgAnimalDog));
+    btnSelectWeightAnimal[1].addEventListener('click', () => selectWeightAnimals(sections[1], arrImgPack[1], arrImgTabletPack[1], arrImgTablet[1], arrImgAnimalDog));
+    btnSelectWeightAnimal[2].addEventListener('click', () => selectWeightAnimals(sections[1], arrImgPack[2], arrImgTabletPack[2], arrImgTablet[2], arrImgAnimalDog));
+
+    btnSelectWeightAnimal[3].addEventListener('click', () => {
+        selectWeightAnimals(sections[12], arrImgPack[3], arrImgTabletPack[3], arrImgTablet[3], arrImgAnimalCat);
+        triggerCat++;
+    });
+    btnSelectWeightAnimal[4].addEventListener('click', () => {
+        selectWeightAnimals(sections[12], arrImgPack[4], arrImgTabletPack[4], arrImgTablet[4], arrImgAnimalCat);
+        triggerCat++;
+    });
+
+    function selectWeightAnimals(item, pack, tabletpack, tablet, animal) {
+        arrReplacePack.forEach(function (item, i, arrReplacePack) {
+            document.getElementById(arrReplacePack[i]).src = pack;
+        });
+        document.getElementById('replace-pack-2').style.backgroundImage = `url('../${pack}')`;
+        arrReplaceTabletPack.forEach(function (item, i, arrReplaceTabletPack) {
+            document.getElementById(arrReplaceTabletPack[i]).src = tabletpack;
+        });
+        arrReplaceTablet.forEach(function (item, i, arrReplaceTablet) {
+            document.getElementById(arrReplaceTablet[i]).src = tablet;
+        });
+        arrReplaceAnimal.forEach(function (item, i, arrReplaceAnimal) {
+            document.getElementById(arrReplaceAnimal[i]).src = animal[i];
+        });
+
+
         setTimeout(addAnimationPlusShakeWarning, 1190, selectTabletLink[0]);
         addAnimationPlusShakeWarning(selectTabletLink[1]);
 
-        fadeOut(sections[1]);
-        setTimeout(displayNone, 590, sections[1]);
+        fadeOut(item);
+        setTimeout(displayNone, 590, item);
         setTimeout(displayFlex, 590, sections[2]);
-        itemBottomIn(selectTablet);
+        setTimeout(animationUpPack, 590);
         fadeIn(sections[2]);
-    });
-    selectWeightAnimal[1].addEventListener('click', () => {
-        setTimeout(addAnimationPlusShakeWarning, 1190, selectTabletLink[0]);
-        addAnimationPlusShakeWarning(selectTabletLink[1]);
+    }
 
-        fadeOut(sections[12]);
-        setTimeout(displayNone, 590, sections[12]);
-        setTimeout(displayFlex, 590, sections[2]);
-        fadeIn(sections[2]);
 
-    });
     /* ТРЕТИЙ СЛАЙД */
     selectTabletLink[0].addEventListener('click', selectCestodOrNematod.bind(sections[4], sections[5]));
 
@@ -77,13 +103,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
         setTimeout(displayFlex, 590, sections[3]);
         fadeIn(sections[3]);
         /* ЧЕТВЁРТЫЙ СЛАЙД */
-        /*setTimeout(fadeOut, 1590, sections[3]);
-        setTimeout(displayNone, 2590, sections[3]);
-        setTimeout(displayFlex, 2590, itemStart);
-        setTimeout(fadeIn, 2590, itemStart);
+        setTimeout(animationDropTablet, 590);
+        setTimeout(fadeOut, 1700, sections[3]);
+        setTimeout(displayNone, 2200, sections[3]);
+        setTimeout(displayFlex, 2200, itemStart);
+        setTimeout(fadeIn, 1700, itemStart);
         /* ПЯТЫЙ СЛАЙД */
         plusClose[0].addEventListener('click', () => CestodOrNematod(sections[4], sections[5]));
         plusClose[1].addEventListener('click', () => CestodOrNematod(sections[5], sections[4]));
+
 
         function CestodOrNematod(itemStart, itemEnd) {
             if (trigger >= 1) {
@@ -102,14 +130,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 trigger++;
             }
         };
-    };
 
+
+    };
     /* СЕДЬМОЙ СЛАЙД ОТКРЫТЬ*/
     specialPlus[0].addEventListener('click', () => specialPlusOpen(sections[7]));
     specialPlus[1].addEventListener('click', () => specialPlusOpen(sections[8]));
-    specialPlus[2].addEventListener('click', () => specialPlusOpen(sections[9]));
-    specialPlus[3].addEventListener('click', () => specialPlusOpen(sections[10]));
-    specialPlus[4].addEventListener('click', () => specialPlusOpen(sections[11]));
+    specialPlus[2].addEventListener('click', () => specialPlusOpen(sections[11]));
+    specialPlus[3].addEventListener('click', () => specialPlusOpen(sections[9]));
+    specialPlus[4].addEventListener('click', () => specialPlusOpen(sections[10]));
 
     /* СЕДЬМОЙ СЛАЙД ЗАКРЫТЬ*/
     let triggerPlusClose = 0;
@@ -151,11 +180,48 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
 
-
     /* АНИМАЦИИ */
+    function animationUpPack() {
+        const pack = document.getElementById('replace-pack-1'),
+            tabletPack = document.getElementById('replace-tablet-pack-1'),
+            tablet = document.getElementById('replace-tablet-1');
+        let posPack = -50,
+            posTabletPack = -90,
+            posTablet = 0;
+        const id = setInterval(frame, 10);
+
+        function frame() {
+            if (posPack > 0 ) {
+                clearInterval(id)
+            } else {
+                posPack++;
+                posTablet = posTablet + 9;
+                posTabletPack = posTabletPack + 2;
+                pack.style.bottom = posPack + 'px';
+                tabletPack.style.bottom = posTabletPack + 'px';
+                tablet.style.bottom = posTablet + 'px';
+            }
+        }
+    }
+    function animationDropTablet() {
+        const element = document.querySelector('.tablet-drop__tablet');
+        let position = 5;
+        const id = setInterval(frame, 5);
+
+        function frame() {
+            if (position > 48) {
+                clearInterval(id)
+            } else {
+                position = position + 0.2;
+                element.style.top = position + '%';
+            }
+        }
+    }
+
     function addAnimationPlusShakeWarning(item) {
         item.classList.add('plus-animation-shake-warning');
     }
+
     function displayNone(item) {
         item.style.display = 'none';
     }
