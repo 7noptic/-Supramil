@@ -53,7 +53,7 @@
   width: 370px;
   color: #000000;
   font-family: Verveine;
-  font-size: 60px;
+  font-size: 2rem;
   font-weight: 400;
   line-height: 48px;
   position: absolute;
@@ -95,7 +95,7 @@
   content:'Мильбемицина оксим';
   color: #000000;
   font-family: Verveine;
-  font-size: 60px;
+  font-size: 2rem;
   font-weight: 400;
   line-height: 48px;
   position: absolute;
@@ -127,12 +127,12 @@
           2px  2px 0   #B29C62;
 }
 .plus-animation-shake-warning{
-  animation-name: shake-hard, plusWarning;
-  animation-duration: 60s, 1s;
-  animation-iteration-count:infinite, infinite;
-  -moz-animation-iteration-count:infinite, infinite;
-  -webkit-animation-iteration-count:infinite, infinite;
-  animation-timing-function: linear, ease;
+  animation-name: shake-hard;//, plusWarning;
+  animation-duration: 60s;//, 1s;
+  animation-iteration-count:infinite;//, infinite;
+  -moz-animation-iteration-count:infinite;//, infinite;
+  -webkit-animation-iteration-count:infinite;//, infinite;
+  animation-timing-function: linear;//, ease;
 }
 .plus-animation-shake{
   animation: shake-hard 60s infinite ease-out;

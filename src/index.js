@@ -4,3 +4,4 @@ import './assets/styles/animation.scss'
 import './assets/styles/media.scss'
 
 import './assets/js/main'
+import './assets/js/parallax'

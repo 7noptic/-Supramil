@@ -16,19 +16,9 @@
   .card__item-img{
     transform: scale(1.1);
   }
-  .card__item-title {
-    color: #336447;
-    text-shadow: #fcf0aa 2px 2px 5px, #fcf0aa -2px -2px 5px,
-    #fcf0aa -2px 2px 5px, #fcf0aa 2px -2px 5px;
-  }
-}
-.card__item:active{
-  .card__item-title{
-    color:#fcf0aa;
-
-  }
 
 }
+
 .card__item-title {
   max-width: 290px;
   margin-top: 30px;

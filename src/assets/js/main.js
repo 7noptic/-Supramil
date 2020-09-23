@@ -1,9 +1,8 @@
-'use script'
+"use strict";
 
 document.addEventListener("DOMContentLoaded", function (event) {
 
-    let main = document.querySelector('main'),
-        body = document.querySelector('body'),
+    let body = document.querySelector('body'),
         sections = document.querySelectorAll('section'),
         sectionSelectCat = document.querySelector('#select-weight-cat'),
         plusClose = document.querySelectorAll('.plus-close-pos'),
@@ -19,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         btnSelectWeightAnimal = document.querySelectorAll('.card__item'),
 
 
-        selectTablet = document.querySelector('.arsenal__img-2'),
         selectTabletLink = document.querySelectorAll('.arsenal__plus'),
 
         footer = document.querySelector('footer');
@@ -31,10 +29,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
         arrImgAnimalDog = ['img/tabletdropbg-min.png', 'img/resultbg-min.png', 'img/securitybg-min.png', 'img/tastebg-min.png'],
         arrImgAnimalCat = ['img/tabletdropbg-cat-min.png', 'img/resultbg-cat-min.png', 'img/securitybg-cat-min.png', 'img/tastebg-cat-min.png'],
 
-        arrReplacePack = ['replace-pack-1'], //2 css
+        arrTextTitle = ['для щенков и собак массой до 5 кг', 'для щенков и собак массой до 20 кг', 'для собак массой от 20 до 50 кг', 'для собак массой от 20 до 50 кг', 'для кошек массой от 2 кг'],
+
+        arrReplacePack = ['replace-pack-1', 'replace-pack-3'], //2 css
         arrReplaceTabletPack = ['replace-tablet-pack-1'],
-        arrReplaceTablet = ['replace-tablet-1', 'replace-tablet-2'],
-        arrReplaceAnimal = ['replace-animal-1', 'replace-animal-2', 'replace-animal-3', 'replace-animal-4'];
+        arrReplaceTablet = ['replace-tablet-1', 'replace-tablet-2', 'replace-tablet-3', 'replace-tablet-4'],
+        arrReplaceAnimal = ['replace-animal-1', 'replace-animal-2', 'replace-animal-3'];
 
 
     /* ПЕРВЫЙ СЛАЙД */
@@ -48,27 +48,39 @@ document.addEventListener("DOMContentLoaded", function (event) {
         setTimeout(displayNone, 590, sections[0]);
         setTimeout(displayFlex, 590, item);
         fadeIn(item);
-    };
+    }
 
     /* ВТОРОЙ СЛАЙД */
-    btnSelectWeightAnimal[0].addEventListener('click', () => selectWeightAnimals(sections[1], arrImgPack[0], arrImgTabletPack[0], arrImgTablet[0], arrImgAnimalDog));
-    btnSelectWeightAnimal[1].addEventListener('click', () => selectWeightAnimals(sections[1], arrImgPack[1], arrImgTabletPack[1], arrImgTablet[1], arrImgAnimalDog));
-    btnSelectWeightAnimal[2].addEventListener('click', () => selectWeightAnimals(sections[1], arrImgPack[2], arrImgTabletPack[2], arrImgTablet[2], arrImgAnimalDog));
+    btnSelectWeightAnimal[0].addEventListener('click', () => selectWeightAnimals(sections[1], arrImgPack[0], arrImgTabletPack[0], arrImgTablet[0], arrImgAnimalDog, arrTextTitle[0]));
+    btnSelectWeightAnimal[1].addEventListener('click', () => selectWeightAnimals(sections[1], arrImgPack[1], arrImgTabletPack[1], arrImgTablet[1], arrImgAnimalDog, arrTextTitle[1]));
+    btnSelectWeightAnimal[2].addEventListener('click', () => selectWeightAnimals(sections[1], arrImgPack[2], arrImgTabletPack[2], arrImgTablet[2], arrImgAnimalDog, arrTextTitle[2]));
 
-    btnSelectWeightAnimal[3].addEventListener('click', () => {
-        selectWeightAnimals(sections[12], arrImgPack[3], arrImgTabletPack[3], arrImgTablet[3], arrImgAnimalCat);
-        triggerCat++;
+    btnSelectWeightAnimal[3].addEventListener('click', () => selectWeightAnimals(sections[1], arrImgPack[0], arrImgTabletPack[0], arrImgTablet[0], arrImgAnimalDog, arrTextTitle[0]));
+    btnSelectWeightAnimal[4].addEventListener('click', () => selectWeightAnimals(sections[1], arrImgPack[1], arrImgTabletPack[1], arrImgTablet[1], arrImgAnimalDog, arrTextTitle[1]));
+    btnSelectWeightAnimal[5].addEventListener('click', () => selectWeightAnimals(sections[1], arrImgPack[2], arrImgTabletPack[2], arrImgTablet[2], arrImgAnimalDog, arrTextTitle[2]));
+
+    btnSelectWeightAnimal[6].addEventListener('click', () => {
+        selectWeightAnimals(sections[12], arrImgPack[3], arrImgTabletPack[3], arrImgTablet[3], arrImgAnimalCat, arrTextTitle[3]);
+        selectWeightCat();
     });
-    btnSelectWeightAnimal[4].addEventListener('click', () => {
-        selectWeightAnimals(sections[12], arrImgPack[4], arrImgTabletPack[4], arrImgTablet[4], arrImgAnimalCat);
-        triggerCat++;
+    btnSelectWeightAnimal[7].addEventListener('click', () => {
+        selectWeightAnimals(sections[12], arrImgPack[4], arrImgTabletPack[4], arrImgTablet[4], arrImgAnimalCat, arrTextTitle[4]);
+        selectWeightCat();
+    });
+    btnSelectWeightAnimal[8].addEventListener('click', () => {
+        selectWeightAnimals(sections[12], arrImgPack[4], arrImgTabletPack[4], arrImgTablet[4], arrImgAnimalCat, arrTextTitle[3]);
+        selectWeightCat();
+    });
+    btnSelectWeightAnimal[9].addEventListener('click', () => {
+        selectWeightAnimals(sections[12], arrImgPack[4], arrImgTabletPack[4], arrImgTablet[4], arrImgAnimalCat, arrTextTitle[4]);
+        selectWeightCat();
     });
 
-    function selectWeightAnimals(item, pack, tabletpack, tablet, animal) {
+    function selectWeightAnimals(item, pack, tabletpack, tablet, animal, text) {
         arrReplacePack.forEach(function (item, i, arrReplacePack) {
             document.getElementById(arrReplacePack[i]).src = pack;
         });
-        document.getElementById('replace-pack-2').style.backgroundImage = `url('../${pack}')`;
+        document.getElementById('replace-pack-2').style.backgroundImage = `url('${pack}')`;
         arrReplaceTabletPack.forEach(function (item, i, arrReplaceTabletPack) {
             document.getElementById(arrReplaceTabletPack[i]).src = tabletpack;
         });
@@ -78,6 +90,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         arrReplaceAnimal.forEach(function (item, i, arrReplaceAnimal) {
             document.getElementById(arrReplaceAnimal[i]).src = animal[i];
         });
+        document.getElementById('replace-animal-4').style.backgroundImage = `url('${animal[3]}')`;
+        replaceText(text);
 
 
         setTimeout(addAnimationPlusShakeWarning, 1190, selectTabletLink[0]);
@@ -88,64 +102,91 @@ document.addEventListener("DOMContentLoaded", function (event) {
         setTimeout(displayFlex, 590, sections[2]);
         setTimeout(animationUpPack, 590);
         fadeIn(sections[2]);
+        body.style.overflowY = 'scroll';
+        setTimeout(displayFlex, 590, sections[13]);
+        setTimeout(displayFlex, 590, sections[14]);
+        setTimeout(displayFlex, 590, footer);
+        fadeIn(sections[13]);
+        fadeIn(sections[14]);
+        fadeIn(footer);
     }
 
+    function selectWeightCat() {
+        triggerCat++;
+        document.getElementById('replace-animal-2').classList.remove('result__img');
+        document.getElementById('replace-animal-4').classList.toggle('taste__bg');
+        document.getElementById('replace-animal-4').classList.toggle('taste__bg-cat');
+        document.getElementById('replace-tablet-4').classList.toggle('taste__tablet');
+        document.getElementById('replace-tablet-4').classList.toggle('taste__tablet-cat');
+    }
+
+    function replaceText(item) {
+        document.getElementById('replace_text').textContent = item;
+    }
 
     /* ТРЕТИЙ СЛАЙД */
-    selectTabletLink[0].addEventListener('click', ()=>{selectCestodOrNematod(sections[4], sections[5]);setTimeout(animationCestod,2200);});
+    selectTabletLink[0].addEventListener('click', () => {
+        setTimeout(plusDisabled, 590, selectTabletLink[0]);
 
-    selectTabletLink[1].addEventListener('click', ()=>{selectCestodOrNematod(sections[5], sections[4]);setTimeout(animationNematod,2200);});
+        selectCestodOrNematod(sections[4], sections[5]);
+        setTimeout(animationCestod, 2200);
+    });
 
-    function selectCestodOrNematod(itemStart, itemEnd) {
-        let trigger = 0;
+    selectTabletLink[1].addEventListener('click', () => {
+        setTimeout(plusDisabled, 590, selectTabletLink[1]);
+
+        selectCestodOrNematod(sections[5], sections[4]);
+        setTimeout(animationNematod, 2200);
+    });
+    let triggerCestodOrNematod = 0;
+
+    function selectCestodOrNematod(itemStart) {
         fadeOut(sections[2]);
         setTimeout(displayNone, 590, sections[2]);
         setTimeout(displayFlex, 590, sections[3]);
         fadeIn(sections[3]);
         /* ЧЕТВЁРТЫЙ СЛАЙД */
-        if (triggerCat>0){
+        if (triggerCat > 0) {
             setTimeout(animationDropTabletCat, 590);
-        }else{
+        } else {
             setTimeout(animationDropTabletDog, 590);
         }
         setTimeout(fadeOut, 1700, sections[3]);
         setTimeout(displayNone, 2200, sections[3]);
         setTimeout(displayFlex, 2200, itemStart);
-        setTimeout(fadeIn, 1700, itemStart);
+        setTimeout(fadeIn, 2200, itemStart);
 
 
         /* ПЯТЫЙ СЛАЙД */
-        plusClose[0].addEventListener('click', () => CestodOrNematod(sections[4], sections[5], animationNematod()));
-        plusClose[1].addEventListener('click', () => CestodOrNematod(sections[5], sections[4], animationCestod()));
+        plusClose[0].addEventListener('click', () => CestodOrNematod(sections[4]));
+        plusClose[1].addEventListener('click', () => CestodOrNematod(sections[5]));
 
 
-        function CestodOrNematod(itemStart, itemEnd, animation) {
-            if (trigger >= 1) {
+        function CestodOrNematod(itemStart) {
+
+            if (triggerCestodOrNematod >= 1) {
                 /* ШЕСТОЙ СЛАЙД */
-                fadeOut(sections[4]);
-                fadeOut(sections[5]);
-                setTimeout(displayNone, 590, sections[4]);
-                setTimeout(displayNone, 590, sections[5]);
+                fadeOut(itemStart);
+                setTimeout(displayNone, 590, itemStart);
                 setTimeout(displayFlex, 590, sections[6]);
                 fadeIn(sections[6]);
             } else {
                 fadeOut(itemStart);
                 setTimeout(displayNone, 590, itemStart);
-                setTimeout(animation, 590)
-                setTimeout(displayFlex, 590, itemEnd);
-                fadeIn(itemEnd);
-                trigger++;
+                setTimeout(displayFlex, 590, sections[2]);
+                fadeIn(sections[2]);
+                triggerCestodOrNematod++;
             }
-        };
+        }
 
 
-    };
+    }
     /* СЕДЬМОЙ СЛАЙД ОТКРЫТЬ*/
-    specialPlus[0].addEventListener('click', () => specialPlusOpen(sections[7]));
-    specialPlus[1].addEventListener('click', () => specialPlusOpen(sections[8]));
-    specialPlus[2].addEventListener('click', () => specialPlusOpen(sections[11]));
-    specialPlus[3].addEventListener('click', () => specialPlusOpen(sections[9]));
-    specialPlus[4].addEventListener('click', () => specialPlusOpen(sections[10]));
+    specialPlus[0].addEventListener('click', () => specialPlusOpen(sections[7], specialPlus[0]));
+    specialPlus[1].addEventListener('click', () => specialPlusOpen(sections[8], specialPlus[1]));
+    specialPlus[2].addEventListener('click', () => specialPlusOpen(sections[11], specialPlus[2]));
+    specialPlus[3].addEventListener('click', () => specialPlusOpen(sections[9], specialPlus[3]));
+    specialPlus[4].addEventListener('click', () => specialPlusOpen(sections[10], specialPlus[4]));
 
     /* СЕДЬМОЙ СЛАЙД ЗАКРЫТЬ*/
     let triggerPlusClose = 0;
@@ -155,10 +196,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
     plusClose[4].addEventListener('click', () => specialPlusClose(sections[9]));
     plusClose[5].addEventListener('click', () => specialPlusClose(sections[10]));
     plusClose[6].addEventListener('click', () => specialPlusClose(sections[11]));
-console.log(sections);
 
 
-    function specialPlusOpen(item) {
+    function specialPlusOpen(item, itemPlus) {
+        setTimeout(plusDisabled, 590, itemPlus);
         fadeOut(sections[6]);
         setTimeout(displayNone, 590, sections[6]);
         setTimeout(displayFlex, 590, item);
@@ -166,27 +207,24 @@ console.log(sections);
     }
 
     function specialPlusClose(item) {
-        if (triggerPlusClose <= 3) {
-            fadeOut(item);
-            setTimeout(displayNone, 590, item);
-            setTimeout(displayFlex, 590, sections[6]);
-            fadeIn(sections[6]);
-            triggerPlusClose++;
-            console.log(triggerPlusClose);
-        } else {
-            fadeOut(main);
-            setTimeout(displayNone, 590, main);
-            setTimeout(displayNone, 590, item);
-            body.style.overflowY = 'scroll';
-            setTimeout(displayFlex, 590, sections[13]);
-            setTimeout(displayFlex, 590, sections[14]);
-            setTimeout(displayFlex, 590, footer);
-            fadeIn(sections[13]);
-            fadeIn(sections[14]);
-            fadeIn(footer);
-        }
+        /*   if (triggerPlusClose <= 3) {*/
+        fadeOut(item);
+        setTimeout(displayNone, 590, item);
+        setTimeout(displayFlex, 590, sections[6]);
+        fadeIn(sections[6]);
+        triggerPlusClose++;
+        console.log(triggerPlusClose);
+        /* } else {
+             fadeOut(main);
+             setTimeout(displayNone, 590, main);
+             setTimeout(displayNone, 590, item);
+
+         }*/
     }
 
+    function plusDisabled(item) {
+        item.classList.add('plus__disabled');
+    }
 
     /* АНИМАЦИИ */
     function animationNematod() {
@@ -197,21 +235,22 @@ console.log(sections);
 
         function frame() {
             if (height < 32) {
-                clearInterval(id)
+                clearInterval(id);
                 let nematodItem = document.querySelectorAll('.nematod__item'),
                     i = 1;
-                for(let item of nematodItem){
+                for (let item of nematodItem) {
                     item.classList.add(`item__shake-hard-${i}`);
                     i++;
                 }
             } else {
-                height= height - 0.6;
-                top = top + 0.33;
+                height = height - 0.9;
+                top = top + 0.5;
                 element.style.height = height + '%';
                 element.style.top = top + '%';
             }
         }
     }
+
     function animationCestod() {
         const element = document.querySelector('.cestod__atack');
         let width = 100,
@@ -220,21 +259,22 @@ console.log(sections);
 
         function frame() {
             if (width < 20) {
-                clearInterval(id)
+                clearInterval(id);
                 let cestodItem = document.querySelectorAll('.cestod__item'),
                     i = 1;
-                for(let item of cestodItem){
+                for (let item of cestodItem) {
                     item.classList.add(`item__shake-hard-${i}`);
                     i++;
                 }
             } else {
-                width = width - 0.6;
-                left = left + 0.25;
+                width = width - 0.9;
+                left = left + 0.35;
                 element.style.width = width + '%';
                 element.style.left = left + '%';
             }
         }
     }
+
     function animationUpPack() {
         const pack = document.getElementById('replace-pack-1'),
             tabletPack = document.getElementById('replace-tablet-pack-1'),
@@ -245,8 +285,8 @@ console.log(sections);
         const id = setInterval(frame, 10);
 
         function frame() {
-            if (posPack > 0 ) {
-                clearInterval(id)
+            if (posPack > 0) {
+                clearInterval(id);
             } else {
                 posPack++;
                 posTablet = posTablet + 9;
@@ -257,6 +297,7 @@ console.log(sections);
             }
         }
     }
+
     function animationDropTabletDog() {
         const element = document.querySelector('.tablet-drop__tablet');
         let position = 5;
@@ -271,6 +312,7 @@ console.log(sections);
             }
         }
     }
+
     function animationDropTabletCat() {
         const element = document.querySelector('.tablet-drop__tablet');
         let position = 5;
@@ -289,6 +331,7 @@ console.log(sections);
     function addAnimationPlusShakeWarning(item) {
         item.classList.add('plus-animation-shake-warning');
     }
+
     function AnimationShakeHard(item) {
         item.classList.add('item__shake-hard');
     }

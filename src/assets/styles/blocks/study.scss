@@ -2,3 +2,33 @@
   display: none;
   align-items: center;
 }
+.study__title{
+  margin-bottom: 32px;
+}
+.study__btn {
+  margin-top: 42px;
+  text-decoration: none;
+  border-radius: 22px;
+  font-size: .66rem;
+  border: 1px solid #ffe699;
+  padding: 12px 27px;
+  transition: .3s;
+}
+.study__btn:hover {
+  color: #009d43;
+  background-color: #fcefa6;
+
+}
+
+.study__bg{
+  position: relative;
+  background-image: url('../img/study__bg-min.png');
+  width: 550px;
+  height: 534px;
+}
+
+.study__tablet{
+  position: absolute;
+  top: 44%;
+  left: 41%;
+}

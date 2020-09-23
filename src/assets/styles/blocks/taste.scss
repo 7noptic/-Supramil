@@ -6,3 +6,28 @@
 .taste__title{
   max-width: 320px;
 }
+
+.taste__bg{
+  position: relative;
+  background-image: url('../img/taste__bg-min.png');
+  width: 680px;
+  height: 690px;
+}
+.taste__bg-cat{
+  position: relative;
+  background-image: url('../img/taste__bg-min.png');
+  width: 755px;
+  height: 617px;
+  margin-left: -130px;
+}
+
+.taste__tablet{
+  position: absolute;
+  top: 0%;
+  left: -2%;
+}
+.taste__tablet-cat{
+  position: absolute;
+  top: 0%;
+  left: 42%;
+}

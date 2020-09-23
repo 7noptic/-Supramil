@@ -1,11 +1,55 @@
 .buy{
   display: none;
-  background-color: #8f794a;
+  justify-content: center;
+  background: rgb(45, 85, 62);
+  background: linear-gradient(351deg, rgba(45, 85, 62, 1) 0%, rgba(62, 121, 86, 1) 57%, rgba(68, 193, 126, 1) 100%);
   padding: 0 15px 75px;
 }
 .buy__title{
   margin: 75px 0 30px;
 }
+.buy__subtitle {
+  max-width: 290px;
+  margin-left: 116px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.buy__item{
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+}
+.buy__item-img{
+  transition: all .7s;
+}
+.buy__item:hover{
+  .buy__item-img{
+    transform: scale(1.1);
+  }
+
+
+}
+.buy__link{
+  color: #e01853;
+  font-family: Roboto;
+  font-size: .66rem;
+  font-weight: 700;
+  border-radius: 18px;
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  padding: 12px 55px;
+  text-decoration: none;
+  margin-left: 116px;
+  margin-top: 30px;
+  transition: .3s;
+}
+.buy__link:hover{
+  color: #ffffff;
+  border: 1px solid #e01853;
+  background-color: #e01853;
+}
+/*
 .buy__img{
   transition: .3s;
 }
@@ -28,23 +72,23 @@
 .list__link:after {
   display: block;
   position: absolute;
-  bottom: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
-  width: 100%;/*задаём длинну линии до наведения курсора*/
-  height: 2px; /*задаём ширину линии*/
-  background-color: #ffe699; /*задаём цвет линии*/
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffe699;
   content: "";
-  transition:  0.3s; /*задаём время анимации*/
+  transition:  0.3s;
 }
 
 .list__link:hover:after,
 .list__link:focus:after {
   margin-left: 51%;
 
-  width: 0%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+  width: 0%;
 }
 .list__link:active{
   font-size: 22px;
 }
 ul.list{
   padding: 15px;
-}
+}*/
