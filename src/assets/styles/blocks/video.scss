@@ -23,3 +23,11 @@
   height: 315px;
   border: none;
 }
+
+#paralax {
+  background-image: url('../img/parallax-l-min.png'), url('../img/parallax-r-min.png');
+  width: 100%;
+  background-repeat: repeat-y, repeat-y;
+  background-position: top left, top right;
+  background-size: contain;
+}
