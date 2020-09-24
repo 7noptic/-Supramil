@@ -249,7 +249,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         setTimeout(displayFlex, 590, sections[7]);
         fadeIn(sections[7]);
         triggerPlusClose++;
-        console.log(triggerPlusClose);
         /* } else {
              fadeOut(main);
              setTimeout(displayNone, 590, main);

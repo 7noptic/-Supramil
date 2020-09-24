@@ -18,7 +18,9 @@
   z-index: 10;
   transition: .4s;
 }
-
+button.plus{
+  padding-left: 0;
+}
 .plus__disabled{
   color: #fcefa6;
   border: 4px solid #fcefa6;
