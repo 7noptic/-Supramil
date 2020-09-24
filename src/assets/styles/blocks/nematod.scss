@@ -1,10 +1,58 @@
-.nematod{
+.nematod, .nematod2, .nematod3, .nematod4, .nematod5, .nematod6, .nematod7, .nematod8, .nematod9, .nematod10{
   width: 100%;
   height: 100%;
   //display: flex;
   display: none;
   background: url("../img/nematodbg-min.jpg") no-repeat center center;
   background-size: cover;
+}
+.nematod::after, .nematod2::after, .nematod3::after, .nematod4::after, .nematod5::after, .nematod6::after, .nematod7::after, .nematod8::after, .nematod9::after, .nematod10::after{
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: .1;
+  background: url("../img/nematodbg-min_worm.png") no-repeat center center;
+  background-size: cover;
+  z-index: 1;
+}
+.nematod2::after{
+  opacity: .2;
+}
+.nematod3::after{
+  opacity: .3;
+}
+.nematod4::after{
+  opacity: .4;
+}
+.nematod5::after{
+  opacity: .5;
+}
+.nematod6::after{
+  opacity: .6;
+}
+.nematod7::after{
+  opacity: .7;
+}
+.nematod8::after{
+  opacity: .8;
+}
+.nematod9::after{
+  opacity: .9;
+}
+.nematod10::after{
+  opacity: 1;
+}
+.nematod__text{
+  position: absolute;
+  bottom: 30%;
+  right: 20%;
+  z-index: 10;
 }
 .nematod__text{
   position: absolute;
@@ -19,6 +67,7 @@
   position: absolute;
   left: 10%;
   top: 20%;
+  z-index: 100;
 }
 .nematod__atack-pos{
   width: 100%;

@@ -45,7 +45,7 @@ html, body{
 
 body {
   min-height: 100vh;
-  scroll-behavior: smooth;
+  //scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   min-width: 320px;
@@ -57,7 +57,9 @@ img {
   max-width: 100%;
   height: auto;
 }
-
+btn{
+  cursor: pointer;
+}
 ul[class],
 ol[class] {
   list-style: none;
@@ -102,6 +104,10 @@ main {
   display: flex;
   justify-content: center;
 
+}
+#asalam{
+  display: none;
+  justify-content: center;
 }
 .block-gradient {
   background: rgb(45, 85, 62);

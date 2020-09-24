@@ -1,0 +1,44 @@
+.politics {
+  background-color: #8f794a;
+  padding: 80px 15px;
+}
+
+.politics__plus {
+  transform: rotate(45deg);
+  position: absolute;
+  top: -21%;
+  right: 15%;
+  transition: .1s;
+}
+
+.politics__plus:active {
+  transform: rotate(0deg);
+}
+
+.politics__title {
+  color: #ffe699;
+  font-family: Verveine;
+  font-size: 48px;
+  font-weight: 400;
+  margin-top: 30px;
+}
+
+.politics__text {
+  color: #ffe699;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 20px;
+
+}
+.politics__list{
+  color: #ffe699;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 400;
+  list-style: disc;
+}
+.politics__item {
+  list-style: disc;
+  margin-left: 20px;
+}

@@ -126,18 +126,3 @@
           -2px  2px 0   #B29C62,
           2px  2px 0   #B29C62;
 }
-.plus-animation-shake-warning{
-  animation-name: shake-hard;//, plusWarning;
-  animation-duration: 60s;//, 1s;
-  animation-iteration-count:infinite;//, infinite;
-  -moz-animation-iteration-count:infinite;//, infinite;
-  -webkit-animation-iteration-count:infinite;//, infinite;
-  animation-timing-function: linear;//, ease;
-}
-.plus-animation-shake{
-  animation: shake-hard 60s infinite ease-out;
-  -webkit-animation: shake-hard 60s infinite ease-out;
-}
-.plus-animation-warning{
-  animation: plusWarning 1s infinite linear;
-}

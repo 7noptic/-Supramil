@@ -1,3 +1,5 @@
+
+
 .special{
   width: 100%;
   height: 100%;
@@ -22,42 +24,30 @@
   margin-bottom: 150px;
 }
 
+
 .special__plus-1{
   position: absolute;
   bottom: -13px;
   left: 50px;
 }
-.special__result__title{
-  margin-left: -200px;
 
-
-}
 .special__study{
   position: relative;
   margin-top: 100px;
 }
-.special__study__title{
-  margin-left: -290px;
-}
+
 
 .special__availability{
   position: relative;
-  margin-left: 250px;
-  margin-top: 150px;
+  margin-left: 232px;
+  margin-top: 386px;
 }
-.special__availability__title{
-  position: absolute;
-  left: -200px;
-  bottom: -135px;
-}
+
 
 .special__security{
   position: relative;
   margin-left: 150px;
 
-}
-.special__security__title{
-  margin-left: 100px;
 }
 
 .special__taste{
@@ -69,12 +59,54 @@
   margin-left: 100px;
 }
 
-
-.special__plus-1:after{
-  content: '';
-  display: block;
-  width: 6px;
-  height: 70px;
-  border: 2px solid #ffffff;
-  background-color: #009d43;
+.special__plus-1::before{
+  content: 'Результат';
+  color: #ffe699;
+  font-family: Verveine;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 48px;
+  position: absolute;
+  left: -255px;
 }
+.special__plus-2::before{
+  content: 'Исследования';
+  color: #ffe699;
+  font-family: Verveine;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 48px;
+  position: absolute;
+  left: -290px;
+}
+.special__plus-3::before{
+  content: 'Доступность';
+  color: #ffe699;
+  font-family: Verveine;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 48px;
+  position: absolute;
+  left: -300px;
+}
+.special__plus-4::before{
+  content: 'Безопасность';
+  color: #ffe699;
+  font-family: Verveine;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 48px;
+  position: absolute;
+  left: 85px;
+}
+.special__plus-5::before{
+  content: 'Вкус';
+  color: #ffe699;
+  font-family: Verveine;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 48px;
+  position: absolute;
+  left: 85px;
+}
+

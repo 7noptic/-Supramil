@@ -25,7 +25,53 @@ transition: all .8s;
 }
 
 
-
+.plus-animation-shake-warning{
+  animation-name: shake-hard;//, plusWarning;
+  animation-duration: 60s;//, 1s;
+  animation-iteration-count:infinite;//, infinite;
+  -moz-animation-iteration-count:infinite;//, infinite;
+  -webkit-animation-iteration-count:infinite;//, infinite;
+  animation-timing-function: linear;//, ease;
+}
+.plus-animation-shake-warning2{
+  animation-name: shake-hard-3;//, plusWarning;
+  animation-duration: 60s;//, 1s;
+  animation-iteration-count:infinite;//, infinite;
+  -moz-animation-iteration-count:infinite;//, infinite;
+  -webkit-animation-iteration-count:infinite;//, infinite;
+  animation-timing-function: linear;//, ease;
+}
+.plus-animation-shake-warning3{
+  animation-name: shake-hard-2;//, plusWarning;
+  animation-duration: 75s;//, 1s;
+  animation-iteration-count:infinite;//, infinite;
+  -moz-animation-iteration-count:infinite;//, infinite;
+  -webkit-animation-iteration-count:infinite;//, infinite;
+  animation-timing-function: linear;//, ease;
+}
+.plus-animation-shake-warning4{
+  animation-name: shake-hard-3;//, plusWarning;
+  animation-duration: 65s;//, 1s;
+  animation-iteration-count:infinite;//, infinite;
+  -moz-animation-iteration-count:infinite;//, infinite;
+  -webkit-animation-iteration-count:infinite;//, infinite;
+  animation-timing-function: linear;//, ease;
+}
+.plus-animation-shake-warning5{
+  animation-name: shake-hard-1;//, plusWarning;
+  animation-duration: 70s;//, 1s;
+  animation-iteration-count:infinite;//, infinite;
+  -moz-animation-iteration-count:infinite;//, infinite;
+  -webkit-animation-iteration-count:infinite;//, infinite;
+  animation-timing-function: linear;//, ease;
+}
+.plus-animation-shake{
+  animation: shake-hard 60s infinite ease-out;
+  -webkit-animation: shake-hard 60s infinite ease-out;
+}
+.plus-animation-warning{
+  animation: plusWarning 1s infinite linear;
+}
 .item__bottom-in{
   animation: top-in $fastAnimation linear;
   -webkit-animation: top-in $fastAnimation linear;

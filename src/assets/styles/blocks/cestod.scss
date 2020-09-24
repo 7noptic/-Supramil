@@ -1,10 +1,54 @@
-.cestod{
+.cestod, .cestod2, .cestod3, .cestod4, .cestod5, .cestod6, .cestod7, .cestod8, .cestod9, .cestod10{
   width: 100%;
   height: 100%;
   //display: flex;
   display: none;
   background: url("../img/cestodbg-min.jpg") no-repeat center center;
   background-size: cover;
+  transition: .5s;
+}
+
+.cestod::after, .cestod2::after, .cestod3::after, .cestod4::after, .cestod5::after, .cestod6::after, .cestod7::after, .cestod8::after, .cestod9::after, .cestod10::after{
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: .1;
+  background: url("../img/cestodbg-min_worm.png") no-repeat center center;
+  background-size: cover;
+  z-index: 1;
+}
+.cestod2::after{
+  opacity: .2;
+}
+.cestod3::after{
+  opacity: .3;
+}
+.cestod4::after{
+  opacity: .4;
+}
+.cestod5::after{
+  opacity: .5;
+}
+.cestod6::after{
+  opacity: .6;
+}
+.cestod7::after{
+  opacity: .7;
+}
+.cestod8::after{
+  opacity: .8;
+}
+.cestod9::after{
+  opacity: .9;
+}
+.cestod10::after{
+  opacity: 1;
 }
 .cestod__text{
   position: absolute;
@@ -78,6 +122,7 @@
   position: absolute;
   top: 10%;
   left: 0%;
+  z-index: 100;
 }
 .cestod__atack-pos{
   width: 100%;

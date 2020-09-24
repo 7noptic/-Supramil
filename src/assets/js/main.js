@@ -1,5 +1,8 @@
 "use strict";
-
+window.scrollTo(0, 0);
+window.addEventListener("load", () =>{
+    window.scrollTo(0, 0);
+})
 document.addEventListener("DOMContentLoaded", function (event) {
 
     let body = document.querySelector('body'),
@@ -8,9 +11,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         plusClose = document.querySelectorAll('.plus-close-pos'),
         specialPlus = document.querySelectorAll('.special__plus'),
         triggerCat = 0,
+        zaebalsya = document.getElementById('block-two'),
 
         slide1Right = document.querySelectorAll('.pill-selection'),
-        slide1Left = document.querySelectorAll('.pet-selection > a, .pet-selection>h3,nav,.header__logo'),
+        slide1Left = document.querySelectorAll('.pet-selection > btn, .pet-selection>h3,nav,.header__logo'),
         slide1Fade = document.querySelector('.header'),
         selectAnimal = document.querySelectorAll('.pet-selection__link'),
 
@@ -21,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         selectTabletLink = document.querySelectorAll('.arsenal__plus'),
 
         footer = document.querySelector('footer');
-
 
     const arrImgPack = ['img/special-dog-pack-1-min.png', 'img/special-dog-pack-2-min.png', 'img/special-dog-pack-3-min.png', 'img/special-cat-pack-1-min.png', 'img/special-cat-pack-2-min.png'],
         arrImgTabletPack = ['img/dog-tablet-1-min.png', 'img/dog-tablet-2-min.png', 'img/dog-tablet-3-min.png', 'img/cat-tablet-1-min.png', 'img/cat-tablet-2-min.png'],
@@ -60,19 +63,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
     btnSelectWeightAnimal[5].addEventListener('click', () => selectWeightAnimals(sections[1], arrImgPack[2], arrImgTabletPack[2], arrImgTablet[2], arrImgAnimalDog, arrTextTitle[2]));
 
     btnSelectWeightAnimal[6].addEventListener('click', () => {
-        selectWeightAnimals(sections[12], arrImgPack[3], arrImgTabletPack[3], arrImgTablet[3], arrImgAnimalCat, arrTextTitle[3]);
+        selectWeightAnimals(sections[6], arrImgPack[3], arrImgTabletPack[3], arrImgTablet[3], arrImgAnimalCat, arrTextTitle[3]);
         selectWeightCat();
     });
     btnSelectWeightAnimal[7].addEventListener('click', () => {
-        selectWeightAnimals(sections[12], arrImgPack[4], arrImgTabletPack[4], arrImgTablet[4], arrImgAnimalCat, arrTextTitle[4]);
+        selectWeightAnimals(sections[6], arrImgPack[4], arrImgTabletPack[4], arrImgTablet[4], arrImgAnimalCat, arrTextTitle[4]);
         selectWeightCat();
     });
     btnSelectWeightAnimal[8].addEventListener('click', () => {
-        selectWeightAnimals(sections[12], arrImgPack[4], arrImgTabletPack[4], arrImgTablet[4], arrImgAnimalCat, arrTextTitle[3]);
+        selectWeightAnimals(sections[6], arrImgPack[4], arrImgTabletPack[4], arrImgTablet[4], arrImgAnimalCat, arrTextTitle[3]);
         selectWeightCat();
     });
     btnSelectWeightAnimal[9].addEventListener('click', () => {
-        selectWeightAnimals(sections[12], arrImgPack[4], arrImgTabletPack[4], arrImgTablet[4], arrImgAnimalCat, arrTextTitle[4]);
+        selectWeightAnimals(sections[6], arrImgPack[4], arrImgTabletPack[4], arrImgTablet[4], arrImgAnimalCat, arrTextTitle[4]);
         selectWeightCat();
     });
 
@@ -97,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         setTimeout(addAnimationPlusShakeWarning, 1190, selectTabletLink[0]);
         addAnimationPlusShakeWarning(selectTabletLink[1]);
 
+
         fadeOut(item);
         setTimeout(displayNone, 590, item);
         setTimeout(displayFlex, 590, sections[2]);
@@ -104,9 +108,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
         fadeIn(sections[2]);
         body.style.overflowY = 'scroll';
         setTimeout(displayFlex, 590, sections[13]);
+        setTimeout(displayFlex, 590, zaebalsya);
+        setTimeout(displayFlex, 590, sections[7]);
         setTimeout(displayFlex, 590, sections[14]);
         setTimeout(displayFlex, 590, footer);
         fadeIn(sections[13]);
+        fadeIn(zaebalsya);
+        fadeIn(sections[7]);
         fadeIn(sections[14]);
         fadeIn(footer);
     }
@@ -127,18 +135,42 @@ document.addEventListener("DOMContentLoaded", function (event) {
     /* ТРЕТИЙ СЛАЙД */
     selectTabletLink[0].addEventListener('click', () => {
         setTimeout(plusDisabled, 590, selectTabletLink[0]);
+        selectCestodOrNematod(sections[4]);
 
-        selectCestodOrNematod(sections[4], sections[5]);
         setTimeout(animationCestod, 2200);
+
+        setTimeout(deadWorms, 4000, sections[4], 'cestod', 'cestod2');
+        setTimeout(deadWorms, 4500, sections[4], 'cestod2', 'cestod3');
+        setTimeout(deadWorms, 5000, sections[4], 'cestod3', 'cestod4');
+        setTimeout(deadWorms, 5500, sections[4], 'cestod4', 'cestod5');
+        setTimeout(deadWorms, 6000, sections[4], 'cestod5', 'cestod6');
+        setTimeout(deadWorms, 6500, sections[4], 'cestod6', 'cestod7');
+        setTimeout(deadWorms, 7000, sections[4], 'cestod7', 'cestod8');
+        setTimeout(deadWorms, 7500, sections[4], 'cestod8', 'cestod9');
+        setTimeout(deadWorms, 8000, sections[4], 'cestod9', 'cestod10');
     });
 
     selectTabletLink[1].addEventListener('click', () => {
         setTimeout(plusDisabled, 590, selectTabletLink[1]);
 
-        selectCestodOrNematod(sections[5], sections[4]);
+        selectCestodOrNematod(sections[5]);
+
         setTimeout(animationNematod, 2200);
+        setTimeout(deadWorms, 4000, sections[5], 'nematod', 'nematod2');
+        setTimeout(deadWorms, 4500, sections[5], 'nematod2', 'nematod3');
+        setTimeout(deadWorms, 5000, sections[5], 'nematod3', 'nematod4');
+        setTimeout(deadWorms, 5500, sections[5], 'nematod4', 'nematod5');
+        setTimeout(deadWorms, 6000, sections[5], 'nematod5', 'nematod6');
+        setTimeout(deadWorms, 6500, sections[5], 'nematod6', 'nematod7');
+        setTimeout(deadWorms, 7000, sections[5], 'nematod7', 'nematod8');
+        setTimeout(deadWorms, 7500, sections[5], 'nematod8', 'nematod9');
+        setTimeout(deadWorms, 8000, sections[5], 'nematod9', 'nematod10');
     });
-    let triggerCestodOrNematod = 0;
+
+    function deadWorms(item, deleteclass, addclass) {
+        item.classList.remove(deleteclass);
+        item.classList.add(addclass);
+    }
 
     function selectCestodOrNematod(itemStart) {
         fadeOut(sections[2]);
@@ -158,50 +190,54 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
         /* ПЯТЫЙ СЛАЙД */
-        plusClose[0].addEventListener('click', () => CestodOrNematod(sections[4]));
-        plusClose[1].addEventListener('click', () => CestodOrNematod(sections[5]));
+        plusClose[0].addEventListener('click', () => {
+
+            CestodOrNematod(sections[4]);
+            //deadWorms(sections[4], 'cestod10', 'cestod');
+
+        });
+        plusClose[1].addEventListener('click', () => {
+            CestodOrNematod(sections[5]);
+            //deadWorms(sections[5], 'nematod10', 'nematod')
+
+
+        });
 
 
         function CestodOrNematod(itemStart) {
 
-            if (triggerCestodOrNematod >= 1) {
-                /* ШЕСТОЙ СЛАЙД */
-                fadeOut(itemStart);
-                setTimeout(displayNone, 590, itemStart);
-                setTimeout(displayFlex, 590, sections[6]);
-                fadeIn(sections[6]);
-            } else {
-                fadeOut(itemStart);
-                setTimeout(displayNone, 590, itemStart);
-                setTimeout(displayFlex, 590, sections[2]);
-                fadeIn(sections[2]);
-                triggerCestodOrNematod++;
-            }
+
+            fadeOut(itemStart);
+            setTimeout(displayNone, 590, itemStart);
+            setTimeout(displayFlex, 590, sections[2]);
+            fadeIn(sections[2]);
+
         }
 
 
     }
+
     /* СЕДЬМОЙ СЛАЙД ОТКРЫТЬ*/
-    specialPlus[0].addEventListener('click', () => specialPlusOpen(sections[7], specialPlus[0]));
-    specialPlus[1].addEventListener('click', () => specialPlusOpen(sections[8], specialPlus[1]));
-    specialPlus[2].addEventListener('click', () => specialPlusOpen(sections[11], specialPlus[2]));
-    specialPlus[3].addEventListener('click', () => specialPlusOpen(sections[9], specialPlus[3]));
-    specialPlus[4].addEventListener('click', () => specialPlusOpen(sections[10], specialPlus[4]));
+    specialPlus[0].addEventListener('click', () => specialPlusOpen(sections[8], specialPlus[0]));
+    specialPlus[1].addEventListener('click', () => specialPlusOpen(sections[9], specialPlus[1]));
+    specialPlus[2].addEventListener('click', () => specialPlusOpen(sections[12], specialPlus[2]));
+    specialPlus[3].addEventListener('click', () => specialPlusOpen(sections[10], specialPlus[3]));
+    specialPlus[4].addEventListener('click', () => specialPlusOpen(sections[11], specialPlus[4]));
 
     /* СЕДЬМОЙ СЛАЙД ЗАКРЫТЬ*/
     let triggerPlusClose = 0;
 
-    plusClose[2].addEventListener('click', () => specialPlusClose(sections[7]));
-    plusClose[3].addEventListener('click', () => specialPlusClose(sections[8]));
-    plusClose[4].addEventListener('click', () => specialPlusClose(sections[9]));
-    plusClose[5].addEventListener('click', () => specialPlusClose(sections[10]));
-    plusClose[6].addEventListener('click', () => specialPlusClose(sections[11]));
+    plusClose[2].addEventListener('click', () => specialPlusClose(sections[8]));
+    plusClose[3].addEventListener('click', () => specialPlusClose(sections[9]));
+    plusClose[4].addEventListener('click', () => specialPlusClose(sections[10]));
+    plusClose[5].addEventListener('click', () => specialPlusClose(sections[11]));
+    plusClose[6].addEventListener('click', () => specialPlusClose(sections[12]));
 
 
     function specialPlusOpen(item, itemPlus) {
         setTimeout(plusDisabled, 590, itemPlus);
-        fadeOut(sections[6]);
-        setTimeout(displayNone, 590, sections[6]);
+        fadeOut(sections[7]);
+        setTimeout(displayNone, 590, sections[7]);
         setTimeout(displayFlex, 590, item);
         fadeIn(item);
     }
@@ -210,8 +246,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         /*   if (triggerPlusClose <= 3) {*/
         fadeOut(item);
         setTimeout(displayNone, 590, item);
-        setTimeout(displayFlex, 590, sections[6]);
-        fadeIn(sections[6]);
+        setTimeout(displayFlex, 590, sections[7]);
+        fadeIn(sections[7]);
         triggerPlusClose++;
         console.log(triggerPlusClose);
         /* } else {
@@ -331,6 +367,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     function addAnimationPlusShakeWarning(item) {
         item.classList.add('plus-animation-shake-warning');
     }
+
 
     function AnimationShakeHard(item) {
         item.classList.add('item__shake-hard');
