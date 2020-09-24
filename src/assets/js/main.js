@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         zaebalsya = document.getElementById('block-two'),
 
         slide1Right = document.querySelectorAll('.pill-selection'),
-        slide1Left = document.querySelectorAll('.pet-selection > btn, .pet-selection>h3,nav,.header__logo'),
+        slide1Left = document.querySelectorAll('.pet-selection > a, .pet-selection>h3,nav,.header__logo'),
         slide1Fade = document.querySelector('.header'),
         selectAnimal = document.querySelectorAll('.pet-selection__link'),
 

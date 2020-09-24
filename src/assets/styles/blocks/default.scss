@@ -1,6 +1,12 @@
 /* DEFAULT */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
+@font-face{
+  font-family : "Verveine";
+  src : url("https://use.typekit.net/af/e0b8b4/000000000000000000017690/27/l?primer=3a6076633bc77831ac9fb811601de898b4ca8cd1e0aff02d16b23a013090f4db&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/e0b8b4/000000000000000000017690/27/d?primer=3a6076633bc77831ac9fb811601de898b4ca8cd1e0aff02d16b23a013090f4db&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/e0b8b4/000000000000000000017690/27/a?primer=3a6076633bc77831ac9fb811601de898b4ca8cd1e0aff02d16b23a013090f4db&fvd=n4&v=3") format("opentype");
+  font-display : swap;
+  font-style : normal;
+  font-weight : 400;
+}
 
 *,
 *::before,
@@ -57,16 +63,25 @@ img {
   max-width: 100%;
   height: auto;
 }
-btn{
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  /* отображаем курсор в виде руки при наведении; некоторые
+  считают, что необходимо оставлять стрелочный вид для кнопок */
   cursor: pointer;
+}
+button{
+  border: none;
+  outline: none;
 }
 ul[class],
 ol[class] {
   list-style: none;
-}
-
-a:not([class]) {
-  text-decoration-skip-ink: auto;
 }
 
 
