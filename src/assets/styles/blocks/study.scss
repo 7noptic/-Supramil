@@ -25,6 +25,8 @@
 .study__bg{
   position: relative;
   background-image: url('../img/study__bg-min.png');
+  background-size: contain;
+  background-repeat: no-repeat;
   width: 550px;
   height: 534px;
 }

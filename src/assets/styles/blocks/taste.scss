@@ -12,14 +12,18 @@
 .taste__bg{
   position: relative;
   background-image: url('../img/taste__bg-min.png');
-  width: 680px;
-  height: 690px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 580px;
+  height: 590px;
 }
 .taste__bg-cat{
   position: relative;
   background-image: url('../img/taste__bg-min.png');
-  width: 755px;
-  height: 617px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 655px;
+  height: 517px;
   margin-left: -130px;
 }
 

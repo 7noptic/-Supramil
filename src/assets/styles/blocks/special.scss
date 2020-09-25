@@ -34,6 +34,7 @@
 .special__study{
   position: relative;
   margin-top: 100px;
+  margin-left: 90px;
 }
 
 
@@ -63,37 +64,37 @@
   content: 'Результат';
   color: #ffe699;
   font-family: Verveine;
-  font-size: 60px;
+  font-size: 2rem;
   font-weight: 400;
   line-height: 48px;
   position: absolute;
-  left: -255px;
+  left: -9rem;
 }
 .special__plus-2::before{
   content: 'Исследования';
   color: #ffe699;
   font-family: Verveine;
-  font-size: 60px;
+  font-size: 2rem;
   font-weight: 400;
   line-height: 48px;
   position: absolute;
-  left: -290px;
+  left: -10rem;
 }
 .special__plus-3::before{
   content: 'Доступность';
   color: #ffe699;
   font-family: Verveine;
-  font-size: 60px;
+  font-size: 2rem;
   font-weight: 400;
   line-height: 48px;
   position: absolute;
-  left: -300px;
+  left: -10.1rem;
 }
 .special__plus-4::before{
   content: 'Безопасность';
   color: #ffe699;
   font-family: Verveine;
-  font-size: 60px;
+  font-size: 2rem;
   font-weight: 400;
   line-height: 48px;
   position: absolute;
@@ -103,7 +104,7 @@
   content: 'Вкус';
   color: #ffe699;
   font-family: Verveine;
-  font-size: 60px;
+  font-size: 2rem;
   font-weight: 400;
   line-height: 48px;
   position: absolute;
