@@ -58,7 +58,9 @@
   bottom: 8px;
 }
 
-.pet-selection__link:hover::after {
+.pet-selection__link:hover::after,
+.pet-selection__link:active::after,
+.pet-selection__link:focus::after{
   content: url('../img/pet-selection__link-arrow-hover-min.png');
   display: block;
   position: absolute;

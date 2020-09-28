@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         plusClose = document.querySelectorAll('.plus-close-pos'),
         specialPlus = document.querySelectorAll('.special__plus'),
         triggerCat = 0,
-        zaebalsya = document.getElementById('block-two'),
+        blockTwo = document.getElementById('block-two'),
 
         slide1Right = document.querySelectorAll('.pill-selection'),
         slide1Left = document.querySelectorAll('.pet-selection > a, .pet-selection>h3,nav,.header__logo'),
@@ -106,14 +106,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
         setTimeout(displayFlex, 590, sections[2]);
         setTimeout(animationUpPack, 590);
         fadeIn(sections[2]);
-        body.style.overflowY = 'scroll';
+        //body.style.overflowY = 'scroll';
         setTimeout(displayFlex, 590, sections[13]);
-        setTimeout(displayFlex, 590, zaebalsya);
+        setTimeout(displayFlex, 590, blockTwo);
         setTimeout(displayFlex, 590, sections[7]);
         setTimeout(displayFlex, 590, sections[14]);
         setTimeout(displayFlex, 590, footer);
         fadeIn(sections[13]);
-        fadeIn(zaebalsya);
+        fadeIn(blockTwo);
         fadeIn(sections[7]);
         fadeIn(sections[14]);
         fadeIn(footer);
@@ -122,6 +122,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     function selectWeightCat() {
         triggerCat++;
         document.getElementById('replace-animal-2').classList.remove('result__img');
+        document.getElementById('replace-animal-2').classList.remove('result__img-img');
+        document.getElementById('replace-animal-2').classList.toggle('result__img-img-cat');
         document.getElementById('replace-animal-4').classList.toggle('taste__bg');
         document.getElementById('replace-animal-4').classList.toggle('taste__bg-cat');
         document.getElementById('replace-tablet-4').classList.toggle('taste__tablet');
@@ -317,19 +319,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
         let posPack = -50,
             posTabletPack = -90,
             posTablet = 0;
+       /* window.addEventListener("resize", function() {
+
+        });*/
         const id = setInterval(frame, 10);
 
         function frame() {
+
             if (posPack > 0) {
                 clearInterval(id);
             } else {
-                posPack++;
-                posTablet = posTablet + 9;
-                posTabletPack = posTabletPack + 2;
-                pack.style.bottom = posPack + 'px';
-                tabletPack.style.bottom = posTabletPack + 'px';
-                tablet.style.bottom = posTablet + 'px';
+                if (window.matchMedia("(min-height: 760px)").matches) {
+                    variationFrame(1, 9, 2)
+                } else {
+                    variationFrame(0.5, 3.5, 1);
+                }
+
+
             }
+        }
+        function variationFrame(varPosPack, varPosTablet, varPosTabletPack) {
+            posPack = posPack + varPosPack;
+            posTablet = posTablet + varPosTablet;
+            posTabletPack = posTabletPack + varPosTabletPack;
+            pack.style.bottom = posPack + 'px';
+            tabletPack.style.bottom = posTabletPack + 'px';
+            tablet.style.bottom = posTablet + 'px';
         }
     }
 
@@ -342,8 +357,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if (position > 48) {
                 clearInterval(id)
             } else {
-                position = position + 0.2;
-                element.style.top = position + '%';
+                if (window.matchMedia("(min-width: 760px)").matches) {
+                    variationFrame(0.2)
+                } else {
+                    variationFrame(0.1);
+                }
+                function variationFrame(pos){
+                    position = position + pos;
+                    element.style.top = position + '%';
+                }
+
             }
         }
     }

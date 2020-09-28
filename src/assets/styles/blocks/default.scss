@@ -46,7 +46,7 @@ html, body{
   min-width: 320px;
   min-height: 480px;
   font-size: 30px;
-
+  overflow-x:hidden;
 }
 
 
@@ -121,10 +121,10 @@ main {
   justify-content: center;
 
 }
-#asalam{
-  display: none;
-  justify-content: center;
-}
+//#asalam{
+//  display: none;
+//  justify-content: center;
+//}
 .block-gradient {
   background: rgb(45, 85, 62);
   background: linear-gradient(351deg, rgba(45, 85, 62, 1) 0%, rgba(62, 121, 86, 1) 57%, rgba(68, 193, 126, 1) 100%);
