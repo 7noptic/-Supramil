@@ -1,11 +1,12 @@
 /* DEFAULT */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@font-face{
-  font-family : "Verveine";
-  src : url("https://use.typekit.net/af/e0b8b4/000000000000000000017690/27/l?primer=3a6076633bc77831ac9fb811601de898b4ca8cd1e0aff02d16b23a013090f4db&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/e0b8b4/000000000000000000017690/27/d?primer=3a6076633bc77831ac9fb811601de898b4ca8cd1e0aff02d16b23a013090f4db&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/e0b8b4/000000000000000000017690/27/a?primer=3a6076633bc77831ac9fb811601de898b4ca8cd1e0aff02d16b23a013090f4db&fvd=n4&v=3") format("opentype");
-  font-display : swap;
-  font-style : normal;
-  font-weight : 400;
+
+@font-face {
+  font-family: "Verveine";
+  src: url("https://use.typekit.net/af/e0b8b4/000000000000000000017690/27/l?primer=3a6076633bc77831ac9fb811601de898b4ca8cd1e0aff02d16b23a013090f4db&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/e0b8b4/000000000000000000017690/27/d?primer=3a6076633bc77831ac9fb811601de898b4ca8cd1e0aff02d16b23a013090f4db&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/e0b8b4/000000000000000000017690/27/a?primer=3a6076633bc77831ac9fb811601de898b4ca8cd1e0aff02d16b23a013090f4db&fvd=n4&v=3") format("opentype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
 }
 
 *,
@@ -35,18 +36,20 @@ dl,
 dd {
   margin: 0;
 }
-body{
+
+body {
   overflow: hidden;
   overflow-x: hidden;
 }
-html, body{
+
+html, body {
 
   scroll-behavior: smooth;
 
   min-width: 320px;
   min-height: 480px;
   font-size: 30px;
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
 
 
@@ -64,6 +67,7 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 button {
   padding: 0;
   border: none;
@@ -76,10 +80,12 @@ button {
   считают, что необходимо оставлять стрелочный вид для кнопок */
   cursor: pointer;
 }
-button{
+
+button {
   border: none;
   outline: none;
 }
+
 ul[class],
 ol[class] {
   list-style: none;
@@ -121,10 +127,9 @@ main {
   justify-content: center;
 
 }
-//#asalam{
-//  display: none;
-//  justify-content: center;
-//}
+
+
+
 .block-gradient {
   background: rgb(45, 85, 62);
   background: linear-gradient(351deg, rgba(45, 85, 62, 1) 0%, rgba(62, 121, 86, 1) 57%, rgba(68, 193, 126, 1) 100%);

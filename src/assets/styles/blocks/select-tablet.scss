@@ -47,9 +47,18 @@
 .arsenal__plus-one{
   top: -250px;
   left: 100px;
+
 }
-.arsenal__plus-one::before{
-  content:'R-празиквантел';
+.arsenal__plus-two{
+  top: -195px;
+  right: 100px;
+
+}
+.arsenal__plus-text{
+  z-index: 20;
+  position: absolute;
+  cursor: pointer;
+
   width: 370px;
   color: #000000;
   font-family: Verveine;
@@ -85,44 +94,27 @@
           2px  2px 0   #B29C62;
 
 }
-
-.arsenal__plus-two{
-  top: -195px;
-  right: 100px;
+.arsenal__plus-text-one{
+  top: -250px;
+  left: -258px;
+  transform-origin: 50% 50%;
 
 }
-.arsenal__plus-two:after{
-  content:'Мильбемицина оксим';
-  color: #000000;
-  font-family: Verveine;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 48px;
-  position: absolute;
-  left: 85px;
-  text-shadow:
-          -0   -2px 0   #B29C62,
-          0   -2px 0   #B29C62,
-          -0    2px 0   #B29C62,
-          0    2px 0   #B29C62,
-          -2px -0   0   #B29C62,
-          2px -0   0   #B29C62,
-          -2px  0   0   #B29C62,
-          2px  0   0   #B29C62,
-          -1px -2px 0   #B29C62,
-          1px -2px 0   #B29C62,
-          -1px  2px 0   #B29C62,
-          1px  2px 0   #B29C62,
-          -2px -1px 0   #B29C62,
-          2px -1px 0   #B29C62,
-          -2px  1px 0   #B29C62,
-          2px  1px 0   #B29C62,
-          -2px -2px 0   #B29C62,
-          2px -2px 0   #B29C62,
-          -2px  2px 0   #B29C62,
-          2px  2px 0   #B29C62,
-          -2px -2px 0   #B29C62,
-          2px -2px 0   #B29C62,
-          -2px  2px 0   #B29C62,
-          2px  2px 0   #B29C62;
+
+.arsenal__plus-text-two{
+  top: -195px;
+  left: 455px;
+  transform-origin: -20px 50%;
+
+}
+
+
+
+.arsenal__plus-link:hover{
+  .plus{
+    background-color: #fcefa6;
+    -webkit-box-shadow: 0px 0px 0px 3px #fcefa6;
+    -moz-box-shadow: 0px 0px 0px 3px #fcefa6;
+    box-shadow: 0px 0px 0px 3px #fcefa6;
+  }
 }

@@ -1,13 +1,13 @@
 
-
-.special{
+.special {
   width: 100%;
   height: 100%;
   display: none;
   align-items: center;
   justify-content: center;
 }
-.special__pack{
+
+.special__pack {
   width: 100%;
   height: 350px;
   background: url('../img/specialpack-min.png') no-repeat center center;
@@ -17,7 +17,7 @@
   flex-direction: column;
 }
 
-.special__result{
+.special__result {
   position: relative;
   margin-top: -50px;
   margin-left: 125px;
@@ -25,89 +25,74 @@
 }
 
 
-.special__plus-1{
+.special__plus-1 {
   position: absolute;
   bottom: -13px;
   left: 50px;
 }
 
-.special__study{
+.special__study {
   position: relative;
   margin-top: 100px;
   margin-left: 90px;
 }
 
 
-.special__availability{
+.special__availability {
   position: relative;
   margin-left: 232px;
   margin-top: 386px;
 }
 
 
-.special__security{
+.special__security {
   position: relative;
   margin-left: 150px;
 
 }
 
-.special__taste{
+.special__taste {
   position: relative;
   margin-top: 280px;
   margin-left: 125px;
 }
-.special__taste__title{
+
+.special__taste__title {
   margin-left: 100px;
 }
 
-.special__plus-1::before{
-  content: 'Результат';
+.special__plus-text {
   color: #ffe699;
   font-family: Verveine;
   font-size: 2rem;
   font-weight: 400;
   line-height: 48px;
   position: absolute;
-  left: -9rem;
 }
-.special__plus-2::before{
-  content: 'Исследования';
-  color: #ffe699;
-  font-family: Verveine;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 48px;
-  position: absolute;
+
+.special__plus-text-one {
+  left: -7rem;
+  top: -50px;
+  transform-origin: 105% 50%;
+}
+
+.special__plus-text-two {
+  transform-origin: 105% 50%;
   left: -10rem;
 }
-.special__plus-3::before{
-  content: 'Доступность';
-  color: #ffe699;
-  font-family: Verveine;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 48px;
-  position: absolute;
+
+.special__plus-text-three {
+  transform-origin: 105% 50%;
   left: -10.1rem;
 }
-.special__plus-4::before{
-  content: 'Безопасность';
-  color: #ffe699;
-  font-family: Verveine;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 48px;
-  position: absolute;
+
+.special__plus-text-four {
+  transform-origin: -5% 50%;
   left: 85px;
 }
-.special__plus-5::before{
-  content: 'Вкус';
-  color: #ffe699;
-  font-family: Verveine;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 48px;
-  position: absolute;
+
+.special__plus-text-five {
+  transform-origin: -5% 50%;
   left: 85px;
 }
 

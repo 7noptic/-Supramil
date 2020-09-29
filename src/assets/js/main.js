@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
         selectTabletLink = document.querySelectorAll('.arsenal__plus'),
+        specialText = document.querySelectorAll('.arsenal__text'),
+        selectTabletLinked = document.querySelectorAll('.arsenal__plus-link'),
+        arsenalText = document.querySelectorAll('.arsenal__plus-text'),
 
         footer = document.querySelector('footer');
 
@@ -98,7 +101,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
         setTimeout(addAnimationPlusShakeWarning, 1190, selectTabletLink[0]);
+        setTimeout(addAnimationPlusShakeWarning, 1190, arsenalText[0]);
         addAnimationPlusShakeWarning(selectTabletLink[1]);
+        addAnimationPlusShakeWarning(arsenalText[1]);
 
 
         fadeOut(item);
@@ -135,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
     /* ТРЕТИЙ СЛАЙД */
-    selectTabletLink[0].addEventListener('click', () => {
+    selectTabletLinked[0].addEventListener('click', () => {
         setTimeout(plusDisabled, 590, selectTabletLink[0]);
         selectCestodOrNematod(sections[4]);
 
@@ -152,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         setTimeout(deadWorms, 8000, sections[4], 'cestod9', 'cestod10');
     });
 
-    selectTabletLink[1].addEventListener('click', () => {
+    selectTabletLinked[1].addEventListener('click', () => {
         setTimeout(plusDisabled, 590, selectTabletLink[1]);
 
         selectCestodOrNematod(sections[5]);
@@ -427,10 +432,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 
 
-var paralax = document.getElementById("paralax");
-
-/* коэфициент сдвига: 1 сдвиг равный смещению по оси Y, 0 без сдвига */
-var moveCoef = 0.5;
+let paralax = document.getElementById("paralax"),
+    moveCoef = 0.5;
 
 window.addEventListener("scroll", scroll);
 window.addEventListener("resize", scroll);
