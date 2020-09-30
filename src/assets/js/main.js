@@ -5,8 +5,7 @@ window.addEventListener("load", () =>{
 })
 document.addEventListener("DOMContentLoaded", function (event) {
 
-    let body = document.querySelector('body'),
-        sections = document.querySelectorAll('section'),
+    let sections = document.querySelectorAll('section'),
         sectionSelectCat = document.querySelector('#select-weight-cat'),
         plusClose = document.querySelectorAll('.plus-close-pos'),
         specialPlus = document.querySelectorAll('.special__plus'),
@@ -18,12 +17,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
         slide1Fade = document.querySelector('.header'),
         selectAnimal = document.querySelectorAll('.pet-selection__link'),
 
-
         btnSelectWeightAnimal = document.querySelectorAll('.card__item'),
 
-
         selectTabletLink = document.querySelectorAll('.arsenal__plus'),
-        specialText = document.querySelectorAll('.arsenal__text'),
         selectTabletLinked = document.querySelectorAll('.arsenal__plus-link'),
         arsenalText = document.querySelectorAll('.arsenal__plus-text'),
 
@@ -41,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         arrReplaceTabletPack = ['replace-tablet-pack-1'],
         arrReplaceTablet = ['replace-tablet-1', 'replace-tablet-2', 'replace-tablet-3', 'replace-tablet-4'],
         arrReplaceAnimal = ['replace-animal-1', 'replace-animal-2', 'replace-animal-3'];
-
 
     /* ПЕРВЫЙ СЛАЙД */
     selectAnimal[0].addEventListener('click', () => selectAnimals(sections[1]));
@@ -393,11 +388,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     function addAnimationPlusShakeWarning(item) {
         item.classList.add('plus-animation-shake-warning');
-    }
-
-
-    function AnimationShakeHard(item) {
-        item.classList.add('item__shake-hard');
     }
 
     function displayNone(item) {
