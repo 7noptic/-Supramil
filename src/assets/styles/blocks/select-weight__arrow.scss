@@ -1,0 +1,18 @@
+.select-weight__arrow {
+  animation: stretchOut 1.5s infinite linear;
+}
+.arrow{
+  margin-left: 45%;
+
+}
+@keyframes stretchOut {
+  0%{
+    width: 100%;
+  }
+  50%{
+    width: 90%;
+  }
+  100%{
+    width: 100%;
+  }
+}

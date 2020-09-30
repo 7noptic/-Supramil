@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         fadeOut(slide1Fade);
         setTimeout(displayNone, 590, sections[0]);
         setTimeout(displayFlex, 590, item);
+        setTimeout(displayFlex, 590, document.querySelector('.push-up'));
         fadeIn(item);
     }
 
