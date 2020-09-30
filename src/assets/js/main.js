@@ -25,11 +25,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         footer = document.querySelector('footer');
 
-    const arrImgPack = ['img/special-dog-pack-1-min.png', 'img/special-dog-pack-2-min.png', 'img/special-dog-pack-3-min.png', 'img/special-cat-pack-1-min.png', 'img/special-cat-pack-2-min.png'],
+    const arrImgPack = ['img/special-dog-pack-1-min.webp', 'img/special-dog-pack-2-min.webp', 'img/special-dog-pack-3-min.webp', 'img/special-cat-pack-1-min.webp', 'img/special-cat-pack-2-min.webp'],
         arrImgTabletPack = ['img/dog-tablet-1-min.png', 'img/dog-tablet-2-min.png', 'img/dog-tablet-3-min.png', 'img/cat-tablet-1-min.png', 'img/cat-tablet-2-min.png'],
         arrImgTablet = ['img/tablet-dog-1-min.png', 'img/tablet-min.png', 'img/tablet-dog-2-min.png', 'img/tablet-cat-1-min.png', 'img/tablet-cat-2-min.png'],
-        arrImgAnimalDog = ['img/tabletdropbg-min.png', 'img/resultbg-min.png', 'img/securitybg-min.png', 'img/tastebg-min.png'],
-        arrImgAnimalCat = ['img/tabletdropbg-cat-min.png', 'img/resultbg-cat-min.png', 'img/securitybg-cat-min.png', 'img/tastebg-cat-min.png'],
+        arrImgAnimalDog = ['img/tabletdropbg-min.webp', 'img/resultbg-min.webp', 'img/securitybg-min.webp', 'img/tastebg-min.webp'],
+        arrImgAnimalCat = ['img/tabletdropbg-cat-min.webp', 'img/resultbg-cat-min.webp', 'img/securitybg-cat-min.webp', 'img/tastebg-cat-min.webp'],
 
         arrTextTitle = ['для щенков и собак массой до 5 кг', 'для щенков и собак массой до 20 кг', 'для собак массой от 20 до 50 кг', 'для собак массой от 20 до 50 кг', 'для кошек массой от 2 кг'],
 

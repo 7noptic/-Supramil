@@ -74,6 +74,11 @@ const plugins = () => {
                 {from: 'assets/img/', to: 'img'},
             ]
         }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {from: 'assets/file/', to: 'file'},
+            ]
+        }),
         new MiniCssExtractPlugin({
             filename: fileName('css'),
         })

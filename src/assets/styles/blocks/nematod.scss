@@ -3,7 +3,7 @@
   height: 100%;
   //display: flex;
   display: none;
-  background: url("../img/nematodbg-min.jpg") no-repeat center center;
+  background: url("../img/nematodbg-min.webp") no-repeat center center;
   background-size: cover;
 }
 .nematod::after, .nematod2::after, .nematod3::after, .nematod4::after, .nematod5::after, .nematod6::after, .nematod7::after, .nematod8::after, .nematod9::after, .nematod10::after{
@@ -17,7 +17,7 @@
   bottom: 0;
   left: 0;
   opacity: .1;
-  background: url("../img/nematodbg-min_worm.png") no-repeat center center;
+  background: url("../img/nematodbg-min_worm.webp") no-repeat center center;
   background-size: cover;
   z-index: 1;
 }
