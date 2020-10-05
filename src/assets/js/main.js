@@ -359,9 +359,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 clearInterval(id)
             } else {
                 if (window.matchMedia("(min-width: 760px)").matches) {
-                    variationFrame(0.2)
-                } else {
+                    variationFrame(0.2);
+                } else if(window.matchMedia("(min-width: 575px)").matches){
                     variationFrame(0.1);
+                }else{
+                    variationFrame(0.05);
                 }
                 function variationFrame(pos){
                     position = position + pos;
@@ -381,8 +383,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if (position > 35) {
                 clearInterval(id)
             } else {
-                position = position + 0.2;
-                element.style.top = position + '%';
+                if (window.matchMedia("(min-width: 760px)").matches) {
+                    variationFrame(0.2);
+                } else if(window.matchMedia("(min-width: 575px)").matches){
+                    variationFrame(0.1);
+                }else{
+                    variationFrame(0.05);
+                }
+                function variationFrame(pos){
+                    position = position + pos;
+                    element.style.top = position + '%';
+                }
+
             }
         }
     }
