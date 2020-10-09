@@ -24,22 +24,7 @@
   text-decoration: none;
   color: #066821;
   position: relative;
-}/*
-.header__nav-link:after  {
-  display: block;
-  content: "";
-  background-color: #066821;
-  height: 2px;
-  width: 0%;
-  left: 50%;
-  position: absolute;
-  -webkit-transition: width .2s ease-in-out;
-  -moz--transition: width .2s ease-in-out;
-  transition: width .2s ease-in-out;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  transform: translateX(-50%);
-}*/
+}
 .header__nav-link:hover:after{
   width: 100%;
 }

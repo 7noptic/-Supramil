@@ -1,6 +1,6 @@
 "use strict";
 window.scrollTo(0, 0);
-window.addEventListener("load", () =>{
+window.addEventListener("load", () => {
     window.scrollTo(0, 0);
 })
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -48,8 +48,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
         fadeOut(slide1Fade);
         setTimeout(displayNone, 590, sections[0]);
         setTimeout(displayFlex, 590, item);
-        setTimeout(displayFlex, 590, document.querySelector('.push-up'));
+        setTimeout(pushUpFlex, 590, document.querySelector('.push-up'));
         fadeIn(item);
+    }
+
+    function pushUpFlex(item) {
+        item.style.display = "flex";
+        item.style.position = "fixed";
+        item.style.bottom = "15px";
+        item.style.right = "15px";
     }
 
     /* ВТОРОЙ СЛАЙД */
@@ -242,14 +249,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
         fadeOut(sections[7]);
         setTimeout(displayNone, 590, sections[7]);
         setTimeout(displayFlex, 590, item);
+        setTimeout(anchorScroll, 590, item);
         fadeIn(item);
     }
+
 
     function specialPlusClose(item) {
         /*   if (triggerPlusClose <= 3) {*/
         fadeOut(item);
         setTimeout(displayNone, 590, item);
         setTimeout(displayFlex, 590, sections[7]);
+        setTimeout(anchorScroll, 590, sections[7]);
         fadeIn(sections[7]);
         triggerPlusClose++;
         /* } else {
@@ -259,7 +269,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
          }*/
     }
-
+    function anchorScroll(item) {
+        item.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
     function plusDisabled(item) {
         item.classList.add('plus__disabled');
     }
@@ -320,9 +335,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
         let posPack = -50,
             posTabletPack = -90,
             posTablet = 0;
-       /* window.addEventListener("resize", function() {
+        /* window.addEventListener("resize", function() {
 
-        });*/
+         });*/
         const id = setInterval(frame, 10);
 
         function frame() {
@@ -330,15 +345,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if (posPack > 0) {
                 clearInterval(id);
             } else {
-                if (window.matchMedia("(min-height: 760px)").matches) {
+                if (window.matchMedia("(min-width: 576px)").matches) {
                     variationFrame(1, 9, 2)
-                } else {
-                    variationFrame(0.5, 3.5, 1);
+                } else if (window.matchMedia("(max-width: 575px)").matches && window.matchMedia("(min-width: 360px)").matches){
+                    variationFrame(0.3, 2, 0.7);
+                }else {
+                    variationFrame(0.5, 2.3, 1);
                 }
 
 
             }
         }
+
         function variationFrame(varPosPack, varPosTablet, varPosTabletPack) {
             posPack = posPack + varPosPack;
             posTablet = posTablet + varPosTablet;
@@ -360,12 +378,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
             } else {
                 if (window.matchMedia("(min-width: 760px)").matches) {
                     variationFrame(0.2);
-                } else if(window.matchMedia("(min-width: 575px)").matches){
+                } else if (window.matchMedia("(min-width: 575px)").matches) {
                     variationFrame(0.1);
-                }else{
+                } else {
                     variationFrame(0.05);
                 }
-                function variationFrame(pos){
+
+                function variationFrame(pos) {
                     position = position + pos;
                     element.style.top = position + '%';
                 }
@@ -385,12 +404,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
             } else {
                 if (window.matchMedia("(min-width: 760px)").matches) {
                     variationFrame(0.2);
-                } else if(window.matchMedia("(min-width: 575px)").matches){
+                } else if (window.matchMedia("(min-width: 575px)").matches) {
                     variationFrame(0.1);
-                }else{
+                } else {
                     variationFrame(0.05);
                 }
-                function variationFrame(pos){
+
+                function variationFrame(pos) {
                     position = position + pos;
                     element.style.top = position + '%';
                 }
