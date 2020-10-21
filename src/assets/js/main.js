@@ -186,6 +186,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         fadeOut(sections[2]);
         setTimeout(displayNone, 590, sections[2]);
         setTimeout(displayFlex, 590, sections[3]);
+        setTimeout(anchorScroll, 590, sections[3]);
         fadeIn(sections[3]);
         /* ЧЕТВЁРТЫЙ СЛАЙД */
         if (triggerCat > 0) {
@@ -201,30 +202,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         /* ПЯТЫЙ СЛАЙД */
         plusClose[0].addEventListener('click', () => {
-
             CestodOrNematod(sections[4]);
-            //deadWorms(sections[4], 'cestod10', 'cestod');
-
         });
         plusClose[1].addEventListener('click', () => {
             CestodOrNematod(sections[5]);
-            //deadWorms(sections[5], 'nematod10', 'nematod')
-
-
         });
 
-
         function CestodOrNematod(itemStart) {
-
-
             fadeOut(itemStart);
             setTimeout(displayNone, 590, itemStart);
             setTimeout(displayFlex, 590, sections[2]);
+            setTimeout(anchorScroll, 590, sections[2])
             fadeIn(sections[2]);
-
         }
-
-
     }
 
     /* СЕДЬМОЙ СЛАЙД ОТКРЫТЬ*/
@@ -252,8 +242,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         setTimeout(anchorScroll, 590, item);
         fadeIn(item);
     }
-
-
     function specialPlusClose(item) {
         /*   if (triggerPlusClose <= 3) {*/
         fadeOut(item);
@@ -272,7 +260,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     function anchorScroll(item) {
         item.scrollIntoView({
             behavior: 'smooth',
-            block: 'start'
+            block: "end", inline: "nearest"
         });
     }
     function plusDisabled(item) {
@@ -347,10 +335,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
             } else {
                 if (window.matchMedia("(min-width: 576px)").matches) {
                     variationFrame(1, 9, 2)
-                } else if (window.matchMedia("(max-width: 575px)").matches && window.matchMedia("(min-width: 360px)").matches){
-                    variationFrame(0.3, 2, 0.7);
+                } else if (window.matchMedia("(max-width: 575px)").matches && window.matchMedia("(min-width: 475px)").matches){
+                    variationFrame(0.3, 2, 0.6);
+                }else if (window.matchMedia("(max-width: 474px)").matches && window.matchMedia("(min-width: 400px)").matches){
+                    variationFrame(0.3, 1.8, 0.6);
+                }else if (window.matchMedia("(max-width: 399px)").matches && window.matchMedia("(min-width: 360px)").matches){
+                    variationFrame(0.3, 1.4, 0.6);
                 }else {
-                    variationFrame(0.5, 2.3, 1);
+                    variationFrame(0.25, 1.1, 0.5);
                 }
 
 
